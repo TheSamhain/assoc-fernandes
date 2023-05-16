@@ -6,8 +6,12 @@ import styles from './Header.module.css';
 function Header() {
 	return (
 		<header className={styles.header}>
-			<Image alt='Logo Associação Fernandes' src={AssocLogo} />
-			<h1>Associação Fernandes de Karatê</h1>
+			<Image alt='Logo Associação Fernandes' src={AssocLogo} className={styles.logo} />
+			<h1 className={styles.title}>
+				Associação Fernandes de
+				<br />
+				KARATÊ-DO
+			</h1>
 		</header>
 	);
 }
