@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Faixas() {
+function Menu() {
 	return (
 		<div>
-			<h1>Faixas</h1>
+			<h1>Menu</h1>
 		</div>
 	);
 }
 
-export default Faixas;
+export default Menu;

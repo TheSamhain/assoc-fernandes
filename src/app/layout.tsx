@@ -1,6 +1,8 @@
 import Header from '@/components/Header';
 import './globals.css';
 import { Inter } from 'next/font/google';
+import TabNavigation from '@/components/TabNavigation';
+import styles from './layout.module.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,7 +16,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang='pt-BR'>
 			<body className={inter.className}>
 				<Header />
-				{children}
+				<main className={styles.main}>{children}</main>
+				<TabNavigation />
 			</body>
 		</html>
 	);

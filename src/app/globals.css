@@ -24,11 +24,15 @@ html,
 body {
 	width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 }
 
 body {
 	color: var(--foreground-color);
 	background: var(--background-color);
+	display: flex;
+	flex-direction: column;
+	flex: 1;
 }
 
 a {
