@@ -1,4 +1,7 @@
 import React from 'react';
+import { defaultMetadata } from '@/utils/DefaultMetadata';
+
+export const metadata = defaultMetadata;
 
 function Menu() {
 	return (

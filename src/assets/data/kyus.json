@@ -1,0 +1,113 @@
+[
+    {
+        "kyu": 9,
+        "faixa": "Amarela",
+        "cor": "#FDED00",
+        "fontDark": true,
+        "katas": [
+            {
+                "nome": "Shiho Uke",
+                "video": "/videos/Shiho_Uke.mp4"
+            },
+            {
+                "nome": "Junino Kata",
+                "video": "/videos/Junino_Kata.mp4"
+            }
+        ]
+    },
+    {
+        "kyu": 8,
+        "faixa": "Laranja",
+        "cor": "#FF6600",
+        "katas": [
+            {
+                "nome": "Aoyagi",
+                "video": "/videos/Aoyagi.mp4"
+            }
+        ]
+    },
+    {
+        "kyu": 7,
+        "faixa": "Bordô",
+        "cor": "#4C0013",
+        "katas": [
+            {
+                "nome": "Heian Nidan",
+                "video": "/videos/Heian_Nidan.mp4"
+            }
+        ]
+    },
+    {
+        "kyu": 6,
+        "faixa": "Bordô ponta preta",
+        "cor": "#4C0013",
+        "pontaPreta": true,
+        "katas": [
+            {
+                "nome": "Heian Shodan",
+                "video": "/videos/Heian_Shodan.mp4"
+            },
+            {
+                "nome": "Juroku",
+                "video": "/videos/Juroku.mp4"
+            }
+        ]
+    },
+    {
+        "kyu": 5,
+        "faixa": "Verde",
+        "cor": "#00FF00",
+        "fontDark": true,
+        "katas": [
+            {
+                "nome": "Heian Sandan",
+                "video": "/videos/Heian_Sandan.mp4"
+            }
+        ]
+    },
+    {
+        "kyu": 4,
+        "faixa": "Azul",
+        "cor": "#0000FF",
+        "katas": [
+            {
+                "nome": "Heian Yondan",
+                "video": "/videos/Heian_Yondan.mp4"
+            }
+        ]
+    },
+    {
+        "kyu": 3,
+        "faixa": "Roxa",
+        "cor": "#9400d3",
+        "katas": [
+            {
+                "nome": "Heian Godan",
+                "video": "/videos/Heian_Godan.mp4"
+            }
+        ]
+    },
+    {
+        "kyu": 2,
+        "faixa": "Marrom",
+        "cor": "#4B3621",
+        "katas": [
+            {
+                "nome": "Bassai Dai",
+                "video": "https://www.youtube.com/embed/q1YqGOAAEgs"
+            }
+        ]
+    },
+    {
+        "kyu": 1,
+        "faixa": "Marrom ponta preta",
+        "pontaPreta": true,
+        "cor": "#4B3621",
+        "katas": [
+            {
+                "nome": "Bassai Dai",
+                "video": "https://www.youtube.com/embed/q1YqGOAAEgs"
+            }
+        ]
+    }
+]

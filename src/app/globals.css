@@ -28,8 +28,6 @@ body {
 }
 
 body {
-	color: var(--foreground-color);
-	background: var(--background-color);
 	display: flex;
 	flex-direction: column;
 	flex: 1;

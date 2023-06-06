@@ -1,4 +1,7 @@
+import { defaultMetadata } from '@/utils/DefaultMetadata';
 import styles from './page.module.css';
+
+export const metadata = defaultMetadata;
 
 export default function Home() {
 	return (
