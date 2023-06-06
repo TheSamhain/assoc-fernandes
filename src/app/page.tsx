@@ -1,12 +1,16 @@
 import { defaultMetadata } from '@/utils/DefaultMetadata';
-import styles from './page.module.css';
+import Eventos from '@/assets/data/eventos.json';
 
 export const metadata = defaultMetadata;
 
 export default function Home() {
 	return (
-		<div className={styles.main}>
-			<h1>Home</h1>
+		<div>
+			<h1>Eventos</h1>
+
+			{Eventos.map((evento) => (
+				<></>
+			))}
 		</div>
 	);
 }

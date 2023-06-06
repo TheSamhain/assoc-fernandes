@@ -1,6 +1,6 @@
 import React from 'react';
-import FaixaGroup from './components/FaixaGroup';
-import Kyus from '../../assets/data/kyus.json';
+import FaixaGroup from '@/components/katasfaixas/FaixaGroup';
+import Kyus from '@/assets/data/kyus.json';
 import { defaultMetadata } from '@/utils/DefaultMetadata';
 
 export const metadata = defaultMetadata;

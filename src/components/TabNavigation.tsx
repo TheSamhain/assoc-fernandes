@@ -15,8 +15,8 @@ function TabNavigation() {
 	const tabs = [
 		{ title: 'Home', path: '/', icon: <HomeIcon /> },
 		{ title: 'Katas/Faixas', path: '/katasfaixas', icon: <SportsMartialArtsIcon /> },
-		{ title: 'Galeria', path: '/galeria', icon: <PhotoLibraryIcon /> },
-		{ title: 'Menu', path: '/menu', icon: <MenuIcon /> },
+		// { title: 'Galeria', path: '/galeria', icon: <PhotoLibraryIcon /> },
+		// { title: 'Menu', path: '/menu', icon: <MenuIcon /> },
 	];
 
 	return (
