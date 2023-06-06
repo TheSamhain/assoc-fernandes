@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { BottomNavigation, BottomNavigationAction } from '@mui/material';
+import { BottomNavigation, BottomNavigationAction, useTheme } from '@mui/material';
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts';
 import HomeIcon from '@mui/icons-material/Home';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 function TabNavigation() {
 	const pathName = usePathname();
 	const [currentPath, setCurrentPath] = useState(pathName);
+	const theme = useTheme();
 
 	const tabs = [
 		{ title: 'Home', path: '/', icon: <HomeIcon /> },
@@ -23,6 +24,9 @@ function TabNavigation() {
 			showLabels
 			value={currentPath}
 			onChange={(event, newPath) => setCurrentPath(newPath)}
+			sx={{
+				borderTop: `1px solid ${theme.palette.text.primary}`,
+			}}
 		>
 			{tabs.map((tab, index) => (
 				<BottomNavigationAction

@@ -3,17 +3,19 @@ import Header from '@/components/Header';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import TabNavigation from '@/components/TabNavigation';
-import { ThemeProvider, createTheme, useTheme } from '@mui/material';
+import { ThemeProvider, createTheme, useMediaQuery, useTheme } from '@mui/material';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const darkTheme = createTheme({
-	palette: {
-		mode: 'dark',
-	},
-});
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+	const darkTheme = createTheme({
+		palette: {
+			mode: prefersDarkMode ? 'dark' : 'light',
+		},
+	});
+
 	return (
 		<html lang='pt-BR'>
 			<body className={inter.className}>
