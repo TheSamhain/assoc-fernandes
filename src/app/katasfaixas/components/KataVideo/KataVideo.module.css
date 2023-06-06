@@ -1,0 +1,42 @@
+.kata-video-component {
+	border-radius: 6px;
+	max-width: 90vw;
+}
+
+.kata-item {
+	margin: 16px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 3px solid;
+	border-radius: 8px;
+	max-width: 90vw;
+	height: 300px;
+	width: 500px;
+}
+
+.kata-item:first-child {
+	margin-left: 0px;
+}
+
+.kata-name {
+	margin-top: 8px;
+	position: absolute;
+	color: #fff;
+	background-color: #0006;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-radius: 0px 0px 6px 6px;
+	pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+	.kata-item {
+		margin: 16px 0px;
+	}
+}

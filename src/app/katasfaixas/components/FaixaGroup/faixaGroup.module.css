@@ -1,0 +1,9 @@
+.kyuContainer {
+	padding-top: 16px;
+}
+
+.kataList {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}

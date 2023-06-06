@@ -10,8 +10,9 @@ function KatasFaixas() {
 		<div>
 			<h1>Katas e Faixas</h1>
 
-			<FaixaGroup />
-			<FaixaGroup />
+			{Kyus.map((kyu) => (
+				<FaixaGroup kyu={kyu} key={kyu.faixa} />
+			))}
 		</div>
 	);
 }

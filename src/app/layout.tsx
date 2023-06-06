@@ -3,8 +3,7 @@ import Header from '@/components/Header';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import TabNavigation from '@/components/TabNavigation';
-import { ThemeProvider, createTheme } from '@mui/material';
-import { Metadata } from 'next';
+import { ThemeProvider, createTheme, useTheme } from '@mui/material';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body className={inter.className}>
 				<ThemeProvider theme={darkTheme}>
 					<Header />
-					<main style={{ flex: 1, padding: '10px' }}>{children}</main>
+					<main style={{ flex: 1, padding: '10px', overflow: 'auto' }}>{children}</main>
 					<TabNavigation />
 				</ThemeProvider>
 			</body>
