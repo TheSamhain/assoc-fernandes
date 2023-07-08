@@ -6,13 +6,13 @@ import styles from './page.module.css';
 export const metadata = defaultMetadata;
 
 export default function Home() {
-	return (
-		<div className={styles.page}>
-			<h1>Eventos</h1>
+  return (
+    <div className={styles.page}>
+      <h1>Eventos</h1>
 
-			{Eventos.map((evento) => (
-				<CardEvento key={evento.nome} evento={evento} />
-			))}
-		</div>
-	);
+      {Eventos.map((evento) => (
+        <CardEvento key={evento.nome} evento={evento} />
+      ))}
+    </div>
+  );
 }

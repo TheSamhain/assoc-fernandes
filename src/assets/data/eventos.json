@@ -1,34 +1,30 @@
 [
-    {
-        "data": "11/05/2023",
-        "descricao": "Exame de Faixa SCS - Maio 2023",
-        "fotos": [
-            {
-                "extensao": "jpg",
-                "qtde": 4
-            }
-        ],
-        "galeriaLocal": "/events/Exame_Faixa_SCS_2023_05/",
-        "local": "São Cristóvão do SUl - SC",
-        "nome": "Exame de Faixa São Cristóvão do Sul realizado em 11 de Maio de 2023",
-        "videos": [
-            {
-                "extensao": "mp4",
-                "qtde": 12
-            }
-        ]
+  {
+    "data": "11/05/2023",
+    "descricao": "Exame de Faixa SCS - Maio 2023",
+    "fotos": {
+      "extensao": "jpg",
+      "qtde": 4
     },
-    {
-        "data": "15/04/2023",
-        "descricao": "Campeonato Estadual da Fecaki (Federação Catarinense de Karatê Interestilos) na cidade de Capinzal",
-        "fotos": [
-            {
-                "extensao": "jpg",
-                "qtde": 66
-            }
-        ],
-        "galeriaLocal": "/events/Capinzal-SC-Fecaki/",
-        "local": "Capinzal - SC",
-        "nome": "Capeonato Estadual de Karatê - Capinzal"
-    }
+    "galeriaLocal": "/events/Exame_Faixa_SCS_2023_05/",
+    "local": "São Cristóvão do SUl - SC",
+    "nome": "Exame de Faixa São Cristóvão do Sul realizado em 11 de Maio de 2023",
+    "videos": [
+      {
+        "extensao": "mp4",
+        "qtde": 12
+      }
+    ]
+  },
+  {
+    "data": "15/04/2023",
+    "descricao": "Campeonato Estadual da Fecaki (Federação Catarinense de Karatê Interestilos) na cidade de Capinzal",
+    "fotos": {
+      "extensao": "jpg",
+      "qtde": 66
+    },
+    "galeriaLocal": "/events/Capinzal-SC-Fecaki/",
+    "local": "Capinzal - SC",
+    "nome": "Capeonato Estadual de Karatê - Capinzal"
+  }
 ]

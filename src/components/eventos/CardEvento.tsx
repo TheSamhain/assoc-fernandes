@@ -1,86 +1,68 @@
 'use client';
 import React, { useMemo } from 'react';
-import { Card, CardHeader, CardContent, Typography, CardMedia } from '@mui/material';
+import { Card, CardHeader, CardContent, Typography, CardMedia, Stack } from '@mui/material';
 
 interface EventoProps {
-	data: string;
-	descricao: string;
-	galeriaLocal: string;
-	fotos?: {
-		qtde: number;
-		extensao: string;
-	}[];
-	videos?: {
-		qtde: number;
-		extensao: string;
-	}[];
-	local: string;
-	nome: string;
+  data: string;
+  descricao: string;
+  galeriaLocal: string;
+  fotos?: {
+    qtde: number;
+    extensao: string;
+  };
+  videos?: {
+    qtde: number;
+    extensao: string;
+  }[];
+  local: string;
+  nome: string;
 }
 
 interface CardEventoProps {
-	evento: EventoProps;
+  evento: EventoProps;
 }
 
 const CardEvento: React.FC<CardEventoProps> = ({ evento }) => {
-	const fotos = useMemo(
-		() =>
-			evento.fotos?.map((foto) => {
-				const fotos = [];
+  const fotos = useMemo(() => {
+    if (!evento.fotos) {
+      return null;
+    }
 
-				for (let i = 1; i <= foto.qtde; i++) {
-					fotos.push(
-						<CardMedia
-							component='img'
-							image={evento.galeriaLocal + `foto (${i}).${foto.extensao}`}
-							alt={`foto (${i}).${foto.extensao}`}
-							key={`foto (${i})`}
-							sx={{ marginBottom: 1 }}
-						/>
-					);
-				}
+    const fotos = [];
+    const maxFotos = evento.fotos.qtde > 3 ? 3 : evento.fotos.qtde;
 
-				return fotos;
-			}),
-		[evento]
-	);
+    for (let i = 1; i <= maxFotos; i++) {
+      fotos.push(
+        <CardMedia
+          component='img'
+          image={evento.galeriaLocal + `foto (${i}).${evento.fotos.extensao}`}
+          alt={`foto (${i}).${evento.fotos.extensao}`}
+          key={`foto (${i})`}
+          sx={{ marginBottom: 1 }}
+        />
+      );
+    }
 
-	const videos = useMemo(
-		() =>
-			evento.videos?.map((video) => {
-				const videos = [];
+    return fotos;
+  }, [evento]);
 
-				for (let i = 1; i <= video.qtde; i++) {
-					videos.push(
-						<CardMedia
-							component='video'
-							image={evento.galeriaLocal + `video (${i}).${video.extensao}`}
-							key={`video (${i})`}
-							sx={{ marginBottom: 1 }}
-							controls
-						/>
-					);
-				}
+  return (
+    <Card sx={{ maxWidth: 345, marginBottom: 1 }}>
+      <CardHeader title={evento.nome} subheader={evento.local + ' ' + evento.data} />
 
-				return videos;
-			}),
-		[evento]
-	);
+      {fotos}
 
-	return (
-		<Card sx={{ maxWidth: 345, marginBottom: 1 }}>
-			<CardHeader title={evento.nome} subheader={evento.local + ' ' + evento.data} />
+      {evento.fotos && evento.fotos.qtde > 3 && (
+        <Typography>Mais {evento.fotos.qtde - 3} medias</Typography>
+      )}
 
-			{fotos}
-			{videos}
-
-			<CardContent>
-				<Typography variant='body2' color='text.secondary'>
-					{evento.descricao}
-				</Typography>
-			</CardContent>
-		</Card>
-	);
+      <CardContent>
+        <Typography variant='body2' color='text.secondary'>
+          {evento.descricao}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
 };
 
 export default CardEvento;
