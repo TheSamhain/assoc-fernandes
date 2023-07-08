@@ -1,6 +1,15 @@
 'use client';
 import React, { useMemo } from 'react';
-import { Card, CardHeader, CardContent, Typography, CardMedia, Stack } from '@mui/material';
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  Typography,
+  CardMedia,
+  Stack,
+  ImageList,
+  ImageListItem,
+} from '@mui/material';
 
 interface EventoProps {
   data: string;
@@ -25,7 +34,7 @@ interface CardEventoProps {
 const CardEvento: React.FC<CardEventoProps> = ({ evento }) => {
   const fotos = useMemo(() => {
     if (!evento.fotos) {
-      return null;
+      return [];
     }
 
     const fotos = [];
@@ -43,6 +52,35 @@ const CardEvento: React.FC<CardEventoProps> = ({ evento }) => {
       );
     }
 
+    if (evento.fotos.qtde > 3) {
+      fotos.push(
+        <div key={`foto (4)`} style={{ position: 'relative' }}>
+          <CardMedia
+            component='img'
+            image={evento.galeriaLocal + `foto (4).${evento.fotos.extensao}`}
+            alt={`foto (4).${evento.fotos.extensao}`}
+            sx={{ marginBottom: 1 }}
+          />
+
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Typography variant='h4'>+{evento.fotos.qtde - 3}</Typography>
+          </div>
+        </div>
+      );
+    }
+
     return fotos;
   }, [evento]);
 
@@ -50,11 +88,9 @@ const CardEvento: React.FC<CardEventoProps> = ({ evento }) => {
     <Card sx={{ maxWidth: 345, marginBottom: 1 }}>
       <CardHeader title={evento.nome} subheader={evento.local + ' ' + evento.data} />
 
-      {fotos}
-
-      {evento.fotos && evento.fotos.qtde > 3 && (
-        <Typography>Mais {evento.fotos.qtde - 3} medias</Typography>
-      )}
+      <ImageList cols={2} rowHeight={164} variant='masonry'>
+        {fotos}
+      </ImageList>
 
       <CardContent>
         <Typography variant='body2' color='text.secondary'>
