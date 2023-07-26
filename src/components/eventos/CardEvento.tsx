@@ -22,7 +22,7 @@ interface EventoProps {
   videos?: {
     qtde: number;
     extensao: string;
-  }[];
+  };
   local: string;
   nome: string;
 }

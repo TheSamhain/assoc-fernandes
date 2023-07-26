@@ -9,12 +9,10 @@
     "galeriaLocal": "/events/Exame_Faixa_SCS_2023_05/",
     "local": "São Cristóvão do SUl - SC",
     "nome": "Exame de Faixa São Cristóvão do Sul realizado em 11 de Maio de 2023",
-    "videos": [
-      {
-        "extensao": "mp4",
-        "qtde": 12
-      }
-    ]
+    "videos": {
+      "extensao": "mp4",
+      "qtde": 12
+    }
   },
   {
     "data": "15/04/2023",

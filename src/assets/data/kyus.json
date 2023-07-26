@@ -109,5 +109,17 @@
     ],
     "kyu": 1,
     "pontaPreta": true
+  },
+  {
+    "cor": "#000000",
+    "faixa": "Preta",
+    "katas": [
+      {
+        "nome": "Seienchin",
+        "video": "https://www.youtube.com/watch?v=GqEcr8_5H1M"
+      }
+    ],
+    "kyu": 0,
+    "pontaPreta": false
   }
 ]
