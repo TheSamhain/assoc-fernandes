@@ -5,7 +5,6 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import TabNavigation from '@/components/TabNavigation';
 import { ThemeProvider, createTheme, useMediaQuery, useTheme } from '@mui/material';
-import './swRegister';
 
 const inter = Inter({ subsets: ['latin'] });
 
