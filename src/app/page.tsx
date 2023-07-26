@@ -8,7 +8,7 @@ export const metadata = defaultMetadata;
 export default function Home() {
   return (
     <div className={styles.page}>
-      <h1>Eventos</h1>
+      <h1 className={styles.title}>Eventos</h1>
 
       {Eventos.map((evento) => (
         <CardEvento key={evento.nome} evento={evento} />

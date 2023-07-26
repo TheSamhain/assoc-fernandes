@@ -1,3 +1,4 @@
+'use client';
 import { Chip, useTheme } from '@mui/material';
 import React from 'react';
 import styles from './faixaGroup.module.css';
