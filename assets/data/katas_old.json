@@ -1,0 +1,125 @@
+[
+  {
+    "cor": "#FDED00",
+    "faixa": "Amarela",
+    "fontDark": true,
+    "katas": [
+      {
+        "nome": "Shiho Uke",
+        "video": "https://www.youtube.com/embed/Cm2trJ-6plw"
+      },
+      {
+        "nome": "Junino Kata",
+        "video": "https://www.youtube.com/embed/aQdebikbvkg"
+      }
+    ],
+    "kyu": 9
+  },
+  {
+    "cor": "#FF6600",
+    "faixa": "Laranja",
+    "katas": [
+      {
+        "nome": "Aoyagi",
+        "video": "https://www.youtube.com/embed/pI8P2BqLjQo"
+      }
+    ],
+    "kyu": 8
+  },
+  {
+    "cor": "#4C0013",
+    "faixa": "Bordô",
+    "katas": [
+      {
+        "nome": "Heian Nidan",
+        "video": "https://www.youtube.com/embed/8jLjw63iK8M"
+      }
+    ],
+    "kyu": 7
+  },
+  {
+    "cor": "#4C0013",
+    "faixa": "Bordô ponta preta",
+    "katas": [
+      {
+        "nome": "Heian Shodan",
+        "video": "https://www.youtube.com/embed/WRNcn8oP2Zc"
+      },
+      {
+        "nome": "Juroku",
+        "video": "https://www.youtube.com/embed/0Fv0ZBuuGns"
+      }
+    ],
+    "kyu": 6,
+    "pontaPreta": true
+  },
+  {
+    "cor": "#00FF00",
+    "faixa": "Verde",
+    "fontDark": true,
+    "katas": [
+      {
+        "nome": "Heian Sandan",
+        "video": "https://www.youtube.com/embed/FbBZeL4kqWo"
+      }
+    ],
+    "kyu": 5
+  },
+  {
+    "cor": "#0000FF",
+    "faixa": "Azul",
+    "katas": [
+      {
+        "nome": "Heian Yondan",
+        "video": "https://www.youtube.com/embed/1J8xMnXVUkA"
+      }
+    ],
+    "kyu": 4
+  },
+  {
+    "cor": "#9400d3",
+    "faixa": "Roxa",
+    "katas": [
+      {
+        "nome": "Heian Godan",
+        "video": "https://www.youtube.com/embed/9FQ5O9RMr9I"
+      }
+    ],
+    "kyu": 3
+  },
+  {
+    "cor": "#4B3621",
+    "faixa": "Marrom",
+    "katas": [
+      {
+        "nome": "Bassai Dai",
+        "video": "https://www.youtube.com/embed/q1YqGOAAEgs"
+      }
+    ],
+    "kyu": 2
+  },
+  {
+    "cor": "#4B3621",
+    "faixa": "Marrom ponta preta",
+    "katas": [
+      {
+        "nome": "Bassai Dai",
+        "video": "https://www.youtube.com/embed/q1YqGOAAEgs"
+      }
+    ],
+    "kyu": 1,
+    "pontaPreta": true
+  },
+  {
+    "cor": "#000000",
+    "faixa": "Preta",
+    "katas": [
+      {
+        "nome": "Seienchin",
+        "video": "https://www.youtube.com/embed/eTrz8jHVEcc"
+      }
+    ],
+    "kyu": 0,
+    "pontaPreta": false
+  }
+]

@@ -1,10 +1,8 @@
 {
   "background_color": "#09090a",
-  "categories": [
-    "security"
-  ],
+  "categories": [],
   "description": "Site para Associação Fernandes de Karatê",
-  "dir": "ltr",
+  "dir": ".",
   "display": "minimal-ui",
   "display_override": [
     "minimal-ui"
