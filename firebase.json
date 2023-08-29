@@ -1,0 +1,7 @@
+{
+  "storage": {
+    "public": "public",
+    "rules": "storage.rules",
+    "site": "afkarate"
+  }
+}
