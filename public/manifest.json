@@ -4,9 +4,7 @@
   "description": "Site para Associação Fernandes de Karatê",
   "dir": ".",
   "display": "minimal-ui",
-  "display_override": [
-    "minimal-ui"
-  ],
+  "display_override": ["minimal-ui"],
   "icons": [
     {
       "density": "0.75",

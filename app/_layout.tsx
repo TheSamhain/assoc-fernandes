@@ -11,12 +11,8 @@ export const unstable_settings = {
   initialRouteName: '(tabs)',
 };
 
-// Evita que a splash screen saia automaticamente antes dos assets carregarem
-SplashScreen.preventAutoHideAsync();
-
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...MaterialCommunityIcons.font,
   });
 
@@ -25,17 +21,13 @@ export default function RootLayout() {
     if (error) throw error;
   }, [error]);
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
-
-  return <RootLayoutNav />;
+  return (
+    <>
+      {/* Keep the splash screen open until the assets have loaded. In the future, we should just support async font loading with a native version of font-display. */}
+      {!loaded && <SplashScreen />}
+      {loaded && <RootLayoutNav />}
+    </>
+  );
 }
 
 function RootLayoutNav() {

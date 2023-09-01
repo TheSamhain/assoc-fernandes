@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Platform } from 'react-native';
 import { WebView } from 'react-native-web-webview';
-import { WebView as NativeWebView } from 'react-native-webview';
 
 import { Text, View } from '../Themed';
 
@@ -28,11 +27,7 @@ const KataVideo: React.FC<KataVideoProps> = ({ kata, cor }) => {
           source={{ uri: kata.video + '?rel=0&autoplay=0&showinfo=0&controls=1' }}
         />
       ) : (
-        <NativeWebView
-          style={{ flex: 1, width: '100%', height: '100%' }}
-          javaScriptEnabled
-          source={{ uri: kata.video + '?rel=0&autoplay=0&showinfo=0&controls=1' }}
-        />
+        <></>
       )}
       <Text style={styles.title}>{kata.nome}</Text>
     </View>
