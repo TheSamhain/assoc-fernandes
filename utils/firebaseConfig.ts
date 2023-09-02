@@ -18,8 +18,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-export const analytics = getAnalytics(app);
+export const firebaseApp = initializeApp(firebaseConfig);
+export const firebaseAnalytics = getAnalytics(firebaseApp);
 
 // Initialize Cloud Storage and get a reference to the service
-export const storage = getStorage(app);
+export const firebaseStorage = getStorage(firebaseApp);

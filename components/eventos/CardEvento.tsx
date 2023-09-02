@@ -1,7 +1,11 @@
-import React from 'react';
-import { Dimensions, StyleSheet, ViewStyle, useColorScheme } from 'react-native';
+import { Image } from 'expo-image';
+import { listAll, ref, getDownloadURL } from 'firebase/storage';
+import React, { useEffect, useState } from 'react';
+import { Dimensions, StyleSheet, ViewStyle, useColorScheme, TouchableOpacity } from 'react-native';
 
+import MediaEvento from './MediaEvento';
 import Colors from '../../constants/Colors';
+import { firebaseStorage } from '../../utils/firebaseConfig';
 import { Text, View } from '../Themed';
 
 interface EventoProps {
@@ -17,6 +21,8 @@ interface CardEventoProps {
 }
 
 const CardEvento: React.FC<CardEventoProps> = ({ evento }) => {
+  const [plusMedias, setPlusMedias] = useState(0);
+  const [medias, setMedias] = useState<(string | undefined)[]>([undefined, undefined, undefined, undefined]);
   const theme = useColorScheme() ?? 'light';
   const windowWidth = Dimensions.get('window').width;
 
@@ -28,11 +34,47 @@ const CardEvento: React.FC<CardEventoProps> = ({ evento }) => {
     background.borderRadius = 0;
   }
 
+  useEffect(() => {
+    const getMedias = async () => {
+      setMedias([undefined, undefined, undefined, undefined]);
+
+      const imagesRef = ref(firebaseStorage, evento.galeria);
+      const listRef = await listAll(imagesRef);
+      const { items } = listRef;
+
+      setPlusMedias(items.length > 4 ? items.length - 4 : 0);
+
+      const itemsSliced = items.slice(0, 4);
+
+      const newMedias: string[] = [];
+
+      for (const item of itemsSliced) {
+        const url = await getDownloadURL(item);
+        newMedias.push(url);
+      }
+
+      setMedias(newMedias);
+    };
+
+    getMedias();
+  }, []);
+
   return (
     <View style={[styles.card, background]}>
       <Text style={styles.title}>{evento.nome}</Text>
       <Text style={styles.description}>{evento.descricao}</Text>
       <Text style={styles.description}>{evento.data}</Text>
+
+      <View style={styles.medias}>
+        {medias.map((media, index) => (
+          <MediaEvento
+            plusItems={plusMedias}
+            key={evento.galeria + (media || '') + index}
+            media={media}
+            index={index}
+          />
+        ))}
+      </View>
     </View>
   );
 };
@@ -56,5 +98,12 @@ const styles = StyleSheet.create({
   },
   description: {
     marginBottom: 5,
+  },
+
+  medias: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    flex: 1,
+    padding: 2,
   },
 });
