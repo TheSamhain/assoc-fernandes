@@ -5,7 +5,8 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "public": "dist"
+    "public": "dist",
+    "target": "afkarate"
   },
   "storage": {
     "public": "public",

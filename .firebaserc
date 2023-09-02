@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "assoc-fernandes-karate"
-  }
+  },
+  "targets": {
+    "assoc-fernandes-karate": {
+      "hosting": {
+        "afkarate": [
+          "afkarate"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
