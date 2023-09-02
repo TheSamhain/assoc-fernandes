@@ -26,12 +26,14 @@
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png",
+
+      "backgroundColor": "#121212",
+      "barStyle": "default",
       "name": "Associação Fernandes de Karatê-do",
       "shortName": "Assoc. Fernandes Karatê",
       "description": "Site para Associação Fernandes de Karatê",
       "display": "minimal-ui",
       "lang": "pt-BR",
-      "backgroundColor": "#121212",
       "orientation": "portrait",
       "scope": "https://afkarate.web.app/",
       "themeColor": "#121212"
