@@ -1,7 +1,6 @@
-import { Image } from 'expo-image';
 import { listAll, ref, getDownloadURL } from 'firebase/storage';
 import React, { useEffect, useState } from 'react';
-import { Dimensions, StyleSheet, ViewStyle, useColorScheme, TouchableOpacity } from 'react-native';
+import { Dimensions, StyleSheet, ViewStyle, useColorScheme } from 'react-native';
 
 import MediaEvento from './MediaEvento';
 import Colors from '../../constants/Colors';
@@ -68,6 +67,7 @@ const CardEvento: React.FC<CardEventoProps> = ({ evento }) => {
       <View style={styles.medias}>
         {medias.map((media, index) => (
           <MediaEvento
+            galery={evento.galeria}
             plusItems={plusMedias}
             key={evento.galeria + (media || '') + index}
             media={media}

@@ -1,4 +1,5 @@
 import { Image } from 'expo-image';
+import { useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -6,14 +7,29 @@ import { blurHash } from '../../constants/General';
 import { Text, View } from '../Themed';
 
 interface MediaEventoProps {
+  galery: string;
   media: string | undefined;
   index: number;
   plusItems?: number;
 }
 
-const MediaEvento: React.FC<MediaEventoProps> = ({ media, index, plusItems }) => {
+const MediaEvento: React.FC<MediaEventoProps> = ({ galery, media, index, plusItems }) => {
+  const router = useRouter();
+
   return (
-    <TouchableOpacity style={styles.media}>
+    <TouchableOpacity
+      style={styles.media}
+      onPress={() =>
+        router.push({
+          pathname: 'media',
+          params: {
+            galery,
+            media: btoa(media || ''),
+            index,
+          },
+        })
+      }
+    >
       <Image style={styles.image} source={media} placeholder={blurHash} contentFit='cover' />
       {index === 3 && plusItems ? (
         <View style={styles.overShadow}>
