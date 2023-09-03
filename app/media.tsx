@@ -1,12 +1,11 @@
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import { Image } from 'expo-image';
 import { useLocalSearchParams, useNavigation, useRouter } from 'expo-router';
 import { listAll, ref, getDownloadURL } from 'firebase/storage';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 
 import { View } from '../components/Themed';
-import { blurHash } from '../constants/General';
+import MediaDisplay from '../components/media/MediaDisplay';
 import { firebaseStorage } from '../utils/firebaseConfig';
 
 type ScreenMediaParams = {
@@ -62,7 +61,7 @@ const ScreenMedia = () => {
 
   return (
     <View style={styles.page}>
-      <Image style={styles.image} source={decodedUrl} placeholder={blurHash} contentFit='contain' />
+      <MediaDisplay url={decodedUrl} />
 
       {previousMedia ? (
         <MaterialCommunityIcons
@@ -117,10 +116,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  image: {
-    height: '100%',
-    flex: 1,
-  },
+
   lefIcon: {
     position: 'absolute',
     left: 0,

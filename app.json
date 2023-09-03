@@ -32,7 +32,7 @@
       "name": "Associação Fernandes de Karatê-do",
       "shortName": "Assoc. Fernandes Karatê",
       "description": "Site para Associação Fernandes de Karatê",
-      "display": "minimal-ui",
+      "display": "fullscreen",
       "lang": "pt-BR",
       "orientation": "portrait",
       "scope": "https://afkarate.web.app/",
