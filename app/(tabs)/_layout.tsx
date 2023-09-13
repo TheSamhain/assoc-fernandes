@@ -29,11 +29,20 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <TabBarIcon name='home' color={color} />,
         }}
       />
+
       <Tabs.Screen
         name='katas'
         options={{
           title: 'Katas',
           tabBarIcon: ({ color }) => <TabBarIcon name='karate' color={color} />,
+        }}
+      />
+
+      <Tabs.Screen
+        name='exameFaixa'
+        options={{
+          title: 'Exame faixa',
+          tabBarIcon: ({ color }) => <TabBarIcon name='chevron-triple-up' color={color} />,
         }}
       />
     </Tabs>

@@ -1,0 +1,72 @@
+[
+  {
+    "cor": "#FDED00",
+    "faixa": "Amarela",
+    "fontDark": true,
+    "kyu": 9,
+    "pontaPreta": false
+  },
+  {
+    "cor": "#FF6600",
+    "faixa": "Laranja",
+    "fontDark": false,
+    "kyu": 8,
+    "pontaPreta": false
+  },
+  {
+    "cor": "#4C0013",
+    "faixa": "Bordô",
+    "fontDark": false,
+    "kyu": 7,
+    "pontaPreta": false
+  },
+  {
+    "cor": "#4C0013",
+    "faixa": "Bordô ponta preta",
+    "fontDark": false,
+    "kyu": 6,
+    "pontaPreta": true
+  },
+  {
+    "cor": "#00FF00",
+    "faixa": "Verde",
+    "fontDark": true,
+    "kyu": 5,
+    "pontaPreta": false
+  },
+  {
+    "cor": "#0000FF",
+    "faixa": "Azul",
+    "fontDark": false,
+    "kyu": 4,
+    "pontaPreta": false
+  },
+  {
+    "cor": "#9400d3",
+    "faixa": "Roxa",
+    "fontDark": false,
+    "kyu": 3,
+    "pontaPreta": false
+  },
+  {
+    "cor": "#4B3621",
+    "faixa": "Marrom",
+    "fontDark": false,
+    "kyu": 2,
+    "pontaPreta": false
+  },
+  {
+    "cor": "#4B3621",
+    "faixa": "Marrom ponta preta",
+    "fontDark": false,
+    "kyu": 1,
+    "pontaPreta": true
+  },
+  {
+    "cor": "#000000",
+    "faixa": "Preta",
+    "fontDark": false,
+    "kyu": 0,
+    "pontaPreta": false
+  }
+]
