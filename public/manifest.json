@@ -3,8 +3,10 @@
   "categories": [],
   "description": "Site para Associação Fernandes de Karatê",
   "dir": ".",
-  "display": "minimal-ui",
-  "display_override": ["minimal-ui"],
+  "display": "fullscreen",
+  "display_override": [
+    "fullscreen"
+  ],
   "icons": [
     {
       "density": "0.75",
@@ -46,8 +48,6 @@
   "lang": "pt-BR",
   "name": "Associação Fernandes de Karatê-do",
   "orientation": "portrait",
-  "scope": "https://afkarate.com.br/",
   "short_name": "Assoc. Fernandes Karatê",
-  "start_url": "https://afkarate.com.br/",
   "theme_color": "#fd0000"
 }
