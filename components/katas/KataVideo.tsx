@@ -1,3 +1,4 @@
+import { DarkTheme } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, Platform } from 'react-native';
 import { WebView } from 'react-native-web-webview';
@@ -49,6 +50,7 @@ const styles = StyleSheet.create({
     maxWidth: '100%',
   },
   title: {
+    color: DarkTheme.colors.text,
     backgroundColor: '#000000',
     width: '100%',
     textAlign: 'center',

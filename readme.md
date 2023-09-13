@@ -9,8 +9,6 @@
 
 # TODO
 
-- Na tela de Imagens, deixar o cabeçalho preto, pois no tema branco está estranho
-- Nos katas deixar o título sempre branco, pois no tema branco a título preto se mescla com o fundo
 - Incluir slide das imagens para trocar de imagem
 - Colocar zoom nas imagens
 - Transferir dados para BD do firebase
