@@ -3,8 +3,9 @@ import { useLocalSearchParams, useNavigation, useRouter } from 'expo-router';
 import { listAll, ref, getDownloadURL } from 'firebase/storage';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
+import { TapGestureHandler } from 'react-native-gesture-handler';
+import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 
-import { View } from '../components/Themed';
 import MediaDisplay from '../components/media/MediaDisplay';
 import { firebaseStorage } from '../utils/firebaseConfig';
 
@@ -59,52 +60,70 @@ const ScreenMedia = () => {
     navigation.setOptions({ title });
   }, [media, index]);
 
+  const scale = useSharedValue(1);
+
+  const onDoubleTap = useAnimatedGestureHandler({
+    onActive: () => {
+      if (scale.value > 1) {
+        scale.value = 1;
+      } else {
+        scale.value = scale.value * 2;
+      }
+    },
+  });
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: scale.value }],
+  }));
+
   return (
-    <View style={styles.page}>
-      <MediaDisplay url={decodedUrl} />
+    <TapGestureHandler onGestureEvent={onDoubleTap} numberOfTaps={2}>
+      <Animated.View style={[styles.page, animatedStyle]}>
+        <MediaDisplay url={decodedUrl} />
 
-      {previousMedia ? (
-        <MaterialCommunityIcons
-          size={40}
-          style={styles.lefIcon}
-          color='#ffffff'
-          name='chevron-left'
-          onPress={() =>
-            router.push({
-              pathname: 'media',
-              params: {
-                galery,
-                media: btoa(previousMedia || ''),
-                index: numIndex - 1,
-              },
-            })
-          }
-        />
-      ) : (
-        <></>
-      )}
+        {previousMedia ? (
+          <MaterialCommunityIcons
+            size={40}
+            style={styles.lefIcon}
+            color='#ffffff'
+            name='chevron-left'
+            onPress={() =>
+              router.push({
+                pathname: 'media',
+                params: {
+                  galery,
+                  media: btoa(previousMedia || ''),
+                  index: numIndex - 1,
+                },
+              })
+            }
+          />
+        ) : (
+          <></>
+        )}
 
-      {nextMedia ? (
-        <MaterialCommunityIcons
-          onPress={() =>
-            router.push({
-              pathname: 'media',
-              params: {
-                galery,
-                media: btoa(nextMedia || ''),
-                index: numIndex + 1,
-              },
-            })
-          }
-          size={40}
-          style={styles.rightIcon}
-          color='#ffffff'
-          name='chevron-right'
-        />
-      ) : (
-        <></>
-      )}
-    </View>
+        {nextMedia ? (
+          <MaterialCommunityIcons
+            onPress={() =>
+              router.push({
+                pathname: 'media',
+                params: {
+                  galery,
+                  media: btoa(nextMedia || ''),
+                  index: numIndex + 1,
+                },
+              })
+            }
+            size={40}
+            style={styles.rightIcon}
+            color='#ffffff'
+            name='chevron-right'
+          />
+        ) : (
+          <></>
+        )}
+      </Animated.View>
+    </TapGestureHandler>
   );
 };
 

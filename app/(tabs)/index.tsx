@@ -10,7 +10,7 @@ export default function TabHomeScreen() {
     <View style={styles.page}>
       <ScrollView style={styles.container}>
         {Eventos.map((evento) => (
-          <CardEvento key={evento.nome} evento={evento} />
+          <CardEvento key={evento.nome + evento.data} evento={evento} />
         ))}
       </ScrollView>
     </View>
