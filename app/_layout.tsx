@@ -35,7 +35,15 @@ function RootLayoutNav() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
-        <Stack.Screen name='media' />
+        <Stack.Screen
+          name='media'
+          options={{
+            headerTintColor: DarkTheme.colors.text,
+            headerStyle: {
+              backgroundColor: DarkTheme.colors.background,
+            },
+          }}
+        />
       </Stack>
     </ThemeProvider>
   );
