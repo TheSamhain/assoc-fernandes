@@ -20,14 +20,16 @@ const MediaEvento: React.FC<MediaEventoProps> = ({ galery, media, index, plusIte
     <TouchableOpacity
       style={styles.media}
       onPress={() =>
-        router.push({
-          pathname: 'media',
-          params: {
-            galery,
-            media: btoa(media || ''),
-            index,
-          },
-        })
+        !media
+          ? null
+          : router.push({
+              pathname: 'media',
+              params: {
+                galery,
+                media: btoa(media || ''),
+                index,
+              },
+            })
       }
     >
       <Image style={styles.image} source={media} placeholder={blurHash} contentFit='cover' />

@@ -32,7 +32,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name='katas'
         options={{
-          title: 'Katas e Faixas',
+          title: 'Katas',
           tabBarIcon: ({ color }) => <TabBarIcon name='karate' color={color} />,
         }}
       />
