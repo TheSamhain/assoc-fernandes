@@ -1,11 +1,19 @@
 {
   "background_color": "#09090a",
-  "categories": [],
+  "categories": [
+    "sports",
+    "photo",
+    "lifestyle",
+    "health",
+    "fitness",
+    "entertainment"
+  ],
   "description": "Site para Associação Fernandes de Karatê",
   "dir": ".",
-  "display": "fullscreen",
+  "display": "minimal-ui",
   "display_override": [
-    "fullscreen"
+    "browser",
+    "window-controls-overlay"
   ],
   "icons": [
     {
@@ -48,6 +56,8 @@
   "lang": "pt-BR",
   "name": "Associação Fernandes de Karatê-do",
   "orientation": "portrait",
+  "scope": "/",
   "short_name": "Assoc. Fernandes Karatê",
+  "start_url": "/",
   "theme_color": "#fd0000"
 }
