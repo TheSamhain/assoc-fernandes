@@ -9,10 +9,8 @@
 
 # TODO
 
-- Incluir slide das imagens para trocar de imagem
 - Colocar zoom nas imagens
 - Transferir dados para BD do firebase
-- Criar tela para requisitos do Exame de Faixa
 
 # PARA INCLUIR
 

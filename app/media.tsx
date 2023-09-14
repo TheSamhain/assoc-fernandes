@@ -3,7 +3,7 @@ import { useLocalSearchParams, useNavigation, useRouter } from 'expo-router';
 import { listAll, ref, getDownloadURL } from 'firebase/storage';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { TapGestureHandler } from 'react-native-gesture-handler';
+import { HandlerStateChangeEvent, PanGestureHandler, TapGestureHandler } from 'react-native-gesture-handler';
 import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 
 import MediaDisplay from '../components/media/MediaDisplay';
@@ -62,6 +62,50 @@ const ScreenMedia = () => {
 
   const scale = useSharedValue(1);
 
+  const handleNextMedia = () =>
+    nextMedia
+      ? router.push({
+          pathname: 'media',
+          params: {
+            galery,
+            media: btoa(nextMedia || ''),
+            index: numIndex + 1,
+          },
+        })
+      : null;
+
+  const handlePreviousMedia = () =>
+    previousMedia
+      ? router.push({
+          pathname: 'media',
+          params: {
+            galery,
+            media: btoa(previousMedia || ''),
+            index: numIndex - 1,
+          },
+        })
+      : null;
+
+  const onPan = (event: HandlerStateChangeEvent<Record<string, unknown>>) => {
+    const { nativeEvent } = event;
+
+    const translationX: number = nativeEvent.translationX as number;
+    const translationY: number = nativeEvent.translationY as number;
+
+    if (Math.abs(translationY) > 10 || Math.abs(translationX) < 50) {
+      return;
+    }
+
+    const sideLeft = translationX < 0;
+
+    if (sideLeft) {
+      handleNextMedia();
+      return;
+    }
+
+    handlePreviousMedia();
+  };
+
   const onDoubleTap = useAnimatedGestureHandler({
     onActive: () => {
       if (scale.value > 1) {
@@ -77,53 +121,37 @@ const ScreenMedia = () => {
   }));
 
   return (
-    <TapGestureHandler onGestureEvent={onDoubleTap} numberOfTaps={2}>
-      <Animated.View style={[styles.page, animatedStyle]}>
-        <MediaDisplay url={decodedUrl} />
+    <PanGestureHandler onEnded={onPan}>
+      <TapGestureHandler onGestureEvent={onDoubleTap} numberOfTaps={2}>
+        <Animated.View style={[styles.page, animatedStyle]}>
+          <MediaDisplay url={decodedUrl} />
 
-        {previousMedia ? (
-          <MaterialCommunityIcons
-            size={40}
-            style={styles.lefIcon}
-            color='#ffffff'
-            name='chevron-left'
-            onPress={() =>
-              router.push({
-                pathname: 'media',
-                params: {
-                  galery,
-                  media: btoa(previousMedia || ''),
-                  index: numIndex - 1,
-                },
-              })
-            }
-          />
-        ) : (
-          <></>
-        )}
+          {previousMedia ? (
+            <MaterialCommunityIcons
+              size={40}
+              style={styles.lefIcon}
+              color='#ffffff'
+              name='chevron-left'
+              onPress={handlePreviousMedia}
+            />
+          ) : (
+            <></>
+          )}
 
-        {nextMedia ? (
-          <MaterialCommunityIcons
-            onPress={() =>
-              router.push({
-                pathname: 'media',
-                params: {
-                  galery,
-                  media: btoa(nextMedia || ''),
-                  index: numIndex + 1,
-                },
-              })
-            }
-            size={40}
-            style={styles.rightIcon}
-            color='#ffffff'
-            name='chevron-right'
-          />
-        ) : (
-          <></>
-        )}
-      </Animated.View>
-    </TapGestureHandler>
+          {nextMedia ? (
+            <MaterialCommunityIcons
+              onPress={handleNextMedia}
+              size={40}
+              style={styles.rightIcon}
+              color='#ffffff'
+              name='chevron-right'
+            />
+          ) : (
+            <></>
+          )}
+        </Animated.View>
+      </TapGestureHandler>
+    </PanGestureHandler>
   );
 };
 
