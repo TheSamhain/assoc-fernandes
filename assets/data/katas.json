@@ -73,11 +73,24 @@
   {
     "katas": [
       {
-        "nome": "Bassai Dai",
-        "video": "https://www.youtube.com/embed/q1YqGOAAEgs"
+        "nome": "Heian Nidan - BUNKAI",
+        "video": "https://www.youtube.com/embed/fQaF7gnvLyY"
       }
     ],
     "kyu": 2
+  },
+  {
+    "katas": [
+      {
+        "nome": "Bassai Dai",
+        "video": "https://www.youtube.com/embed/q1YqGOAAEgs"
+      },
+      {
+        "nome": "Heian Shodan - BUNKAI",
+        "video": "https://www.youtube.com/embed/lFk72ES8gpg"
+      }
+    ],
+    "kyu": 1
   },
   {
     "katas": [
@@ -86,10 +99,23 @@
         "video": "https://www.youtube.com/embed/eTrz8jHVEcc"
       },
       {
-        "nome": "Kosokun Dai",
-        "video": "https://www.youtube.com/embed/f_3oHMFOh4I"
+        "nome": "Heian Sandan - BUNKAI",
+        "video": "https://www.youtube.com/embed/576UDmhssRE"
       }
     ],
     "kyu": 0
+  },
+  {
+    "katas": [
+      {
+        "nome": "Kosokun Dai",
+        "video": "https://www.youtube.com/embed/f_3oHMFOh4I"
+      },
+      {
+        "nome": "Bassai Dai - BUNKAI",
+        "video": "https://www.youtube.com/embed/R3VRjqkDr-I"
+      }
+    ],
+    "kyu": -1
   }
 ]

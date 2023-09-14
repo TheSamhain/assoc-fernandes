@@ -13,3 +13,19 @@
 - Colocar zoom nas imagens
 - Transferir dados para BD do firebase
 - Criar tela para requisitos do Exame de Faixa
+
+# PARA INCLUIR
+
+## KATAS
+
+- Kakt Chinto = https://m.facebook.com/story.php?story_fbid=6021570737925072&id=100002166159818&sfnsn=wiwspwawes
+
+- Niseishi = https://youtu.be/ZsvSvs80w-k
+
+- Sochin = https://youtu.be/gnDpkmow8-Q?si=VykKU5qk6EVNb5Sn
+
+## BUNKAIS
+
+- Heian Yondan = https://youtu.be/CZJSM0znUvU
+
+- Heian Godan = https://youtu.be/5XvQ46q72_I
