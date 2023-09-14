@@ -6,10 +6,10 @@ import KataVideo from './KataVideo';
 import { FaixaGroupProps } from '../../interfaces/FaixaGroupProps';
 import { View } from '../Themed';
 
-const FaixaGroup: React.FC<FaixaGroupProps> = ({ kyu }) => {
+const FaixaGroup: React.FC<FaixaGroupProps> = (kyu) => {
   return (
     <View style={styles.kyuContainer}>
-      <ChipGroup kyu={kyu} />
+      <ChipGroup {...kyu} />
 
       <FlatList data={kyu.katas} renderItem={({ item }) => <KataVideo kata={item} cor={kyu.cor} />} />
     </View>

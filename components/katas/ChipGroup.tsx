@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Colors from '../../constants/Colors';
 import { FaixaGroupProps } from '../../interfaces/FaixaGroupProps';
 
-const ChipGroup: React.FC<FaixaGroupProps> = ({ kyu }) => {
+const ChipGroup: React.FC<FaixaGroupProps> = (kyu) => {
   return (
     <View
       style={{
@@ -15,7 +15,7 @@ const ChipGroup: React.FC<FaixaGroupProps> = ({ kyu }) => {
       <Text
         style={{
           ...styles.chipText,
-          color: kyu.fontDark ? Colors.light.text : Colors.dark.text,
+          color: kyu.fonteEscura ? Colors.light.text : Colors.dark.text,
         }}
       >
         {kyu.faixa}

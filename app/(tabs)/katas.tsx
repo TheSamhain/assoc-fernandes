@@ -1,12 +1,12 @@
 import { ScrollView, StyleSheet } from 'react-native';
 
-import Katas from '../../assets/data/katas.json';
+import Data from '../../assets/data/katas.json';
 import Kyus from '../../assets/data/kyus.json';
 import { View } from '../../components/Themed';
 import FaixaGroup from '../../components/katas/FaixaGroup';
 
 export default function TabKataScreen() {
-  const katasFaixas = Katas.map((kata) => {
+  const katasFaixas = Data.map((kata) => {
     const kyu = Kyus.find((kyuList) => kyuList.kyu === kata.kyu);
 
     if (!kyu) {
@@ -14,7 +14,7 @@ export default function TabKataScreen() {
         ...kata,
         faixa: 'Branca',
         cor: '#FFFFFF',
-        fontDark: true,
+        fonteEscura: true,
         pontaPreta: false,
       };
     }
@@ -25,8 +25,8 @@ export default function TabKataScreen() {
   return (
     <View style={styles.page}>
       <ScrollView style={styles.container}>
-        {katasFaixas.map((kyu) => (
-          <FaixaGroup kyu={kyu} key={kyu.kyu} />
+        {katasFaixas.map((item) => (
+          <FaixaGroup {...item} key={item.kyu} />
         ))}
       </ScrollView>
     </View>
