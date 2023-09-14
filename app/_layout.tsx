@@ -4,7 +4,6 @@ import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export { ErrorBoundary } from 'expo-router';
 

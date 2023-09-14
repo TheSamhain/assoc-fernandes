@@ -6,9 +6,12 @@ interface ItemData {
 }
 
 export interface ExameData {
-  kyu: number;
-  kata: string[];
+  bunkai: string[];
   geri: ItemData[];
+  kata: string[];
+  kyu: number;
+  tsuki: ItemData[];
+  uke: ItemData[];
 }
 
 export interface ExameAndKyuProps extends KyuProps, ExameData {}
