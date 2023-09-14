@@ -6,6 +6,12 @@
       "**/node_modules/**"
     ],
     "public": "dist",
+    "rewrites": [
+      {
+        "destination": "/index.html",
+        "source": "**"
+      }
+    ],
     "target": "afkarate"
   },
   "storage": {

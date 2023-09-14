@@ -22,7 +22,7 @@
         "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
       },
       {
-        "descricao": "Avança 5x recuando. 5x em base Moto Dachi",
+        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
         "nome": "Oi-zuki (Soco em deslocamento)"
       }
     ],
@@ -61,7 +61,7 @@
         "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
       },
       {
-        "descricao": "Avança 5x recuando. 5x em base Moto Dachi",
+        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
         "nome": "Oi-zuki (Soco em deslocamento)"
       },
       {
@@ -76,7 +76,7 @@
       },
       {
         "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uku (defesa de dentro para fora altura tchudan - peito)"
+        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
       }
     ]
   },
@@ -113,7 +113,7 @@
         "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
       },
       {
-        "descricao": "Avança 5x recuando. 5x em base Moto Dachi",
+        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
         "nome": "Oi-zuki (Soco em deslocamento)"
       },
       {
@@ -132,7 +132,7 @@
       },
       {
         "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uku (defesa de dentro para fora altura tchudan - peito)"
+        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
       },
       {
         "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
@@ -174,7 +174,7 @@
         "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
       },
       {
-        "descricao": "Avança 5x recuando. 5x em base Moto Dachi",
+        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
         "nome": "Oi-zuki (Soco em deslocamento)"
       },
       {
@@ -197,7 +197,7 @@
       },
       {
         "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uku (defesa de dentro para fora altura tchudan - peito)"
+        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
       },
       {
         "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
@@ -244,7 +244,7 @@
         "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
       },
       {
-        "descricao": "Avança 5x recuando. 5x em base Moto Dachi",
+        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
         "nome": "Oi-zuki (Soco em deslocamento)"
       },
       {
@@ -271,15 +271,15 @@
       },
       {
         "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uku (defesa de dentro para fora altura tchudan - peito)"
+        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
       },
       {
         "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
         "nome": "Soto Uke"
       },
       {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Shuto Uke em Nekoashi Dachi"
+        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
+        "nome": "Shuto Uke"
       }
     ]
   },
@@ -327,7 +327,7 @@
         "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
       },
       {
-        "descricao": "Avança 5x recuando. 5x em base Moto Dachi",
+        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
         "nome": "Oi-zuki (Soco em deslocamento)"
       },
       {
@@ -358,15 +358,15 @@
       },
       {
         "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uku (defesa de dentro para fora altura tchudan - peito)"
+        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
       },
       {
         "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
         "nome": "Soto Uke"
       },
       {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Shuto Uke em Nekoashi Dachi"
+        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
+        "nome": "Shuto Uke"
       }
     ]
   },
@@ -419,7 +419,7 @@
         "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
       },
       {
-        "descricao": "Avança 5x recuando. 5x em base Moto Dachi",
+        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
         "nome": "Oi-zuki (Soco em deslocamento)"
       },
       {
@@ -454,15 +454,15 @@
       },
       {
         "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uku (defesa de dentro para fora altura tchudan - peito)"
+        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
       },
       {
         "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
         "nome": "Soto Uke"
       },
       {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Shuto Uke em Nekoashi Dachi"
+        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
+        "nome": "Shuto Uke"
       }
     ]
   },
@@ -517,7 +517,7 @@
         "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
       },
       {
-        "descricao": "Avança 5x recuando. 5x em base Moto Dachi",
+        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
         "nome": "Oi-zuki (Soco em deslocamento)"
       },
       {
@@ -552,15 +552,15 @@
       },
       {
         "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uku (defesa de dentro para fora altura tchudan - peito)"
+        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
       },
       {
         "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
         "nome": "Soto Uke"
       },
       {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Shuto Uke em Nekoashi Dachi"
+        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
+        "nome": "Shuto Uke"
       }
     ]
   },
@@ -616,7 +616,7 @@
         "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
       },
       {
-        "descricao": "Avança 5x recuando. 5x em base Moto Dachi",
+        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
         "nome": "Oi-zuki (Soco em deslocamento)"
       },
       {
@@ -651,15 +651,15 @@
       },
       {
         "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uku (defesa de dentro para fora altura tchudan - peito)"
+        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
       },
       {
         "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
         "nome": "Soto Uke"
       },
       {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Shuto Uke em Nekoashi Dachi"
+        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
+        "nome": "Shuto Uke"
       }
     ]
   },
@@ -716,7 +716,7 @@
         "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
       },
       {
-        "descricao": "Avança 5x recuando. 5x em base Moto Dachi",
+        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
         "nome": "Oi-zuki (Soco em deslocamento)"
       },
       {
@@ -751,15 +751,15 @@
       },
       {
         "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uku (defesa de dentro para fora altura tchudan - peito)"
+        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
       },
       {
         "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
         "nome": "Soto Uke"
       },
       {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Shuto Uke em Nekoashi Dachi"
+        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
+        "nome": "Shuto Uke"
       }
     ]
   },
@@ -817,7 +817,7 @@
         "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
       },
       {
-        "descricao": "Avança 5x recuando. 5x em base Moto Dachi",
+        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
         "nome": "Oi-zuki (Soco em deslocamento)"
       },
       {
@@ -852,15 +852,15 @@
       },
       {
         "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uku (defesa de dentro para fora altura tchudan - peito)"
+        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
       },
       {
         "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
         "nome": "Soto Uke"
       },
       {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Shuto Uke em Nekoashi Dachi"
+        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
+        "nome": "Shuto Uke"
       }
     ]
   }
