@@ -92,7 +92,7 @@ const ScreenMedia = () => {
     const translationX: number = nativeEvent.translationX as number;
     const translationY: number = nativeEvent.translationY as number;
 
-    if (Math.abs(translationY) > 10 || Math.abs(translationX) < 50) {
+    if (Math.abs(translationY) > 50 || Math.abs(translationX) < 50) {
       return;
     }
 
