@@ -6,5 +6,5 @@ interface KataProps {
 }
 
 export interface FaixaGroupProps extends KyuProps {
-  katas: KataProps[];
+  videos: KataProps[];
 }

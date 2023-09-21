@@ -11,7 +11,7 @@ const FaixaGroup: React.FC<FaixaGroupProps> = (kyu) => {
     <View style={styles.kyuContainer}>
       <ChipGroup {...kyu} />
 
-      <FlatList data={kyu.katas} renderItem={({ item }) => <KataVideo kata={item} cor={kyu.cor} />} />
+      <FlatList data={kyu.videos} renderItem={({ item }) => <KataVideo kata={item} cor={kyu.cor} />} />
     </View>
   );
 };

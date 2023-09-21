@@ -1,6 +1,7 @@
 [
   {
-    "katas": [
+    "kyu": 9,
+    "videos": [
       {
         "nome": "Shiho Uke",
         "video": "https://www.youtube.com/embed/Cm2trJ-6plw"
@@ -9,29 +10,29 @@
         "nome": "Junino Kata",
         "video": "https://www.youtube.com/embed/aQdebikbvkg"
       }
-    ],
-    "kyu": 9
+    ]
   },
   {
-    "katas": [
+    "kyu": 8,
+    "videos": [
       {
         "nome": "Aoyagi",
         "video": "https://www.youtube.com/embed/pI8P2BqLjQo"
       }
-    ],
-    "kyu": 8
+    ]
   },
   {
-    "katas": [
+    "kyu": 7,
+    "videos": [
       {
         "nome": "Heian Nidan",
         "video": "https://www.youtube.com/embed/8jLjw63iK8M"
       }
-    ],
-    "kyu": 7
+    ]
   },
   {
-    "katas": [
+    "kyu": 6,
+    "videos": [
       {
         "nome": "Heian Shodan",
         "video": "https://www.youtube.com/embed/WRNcn8oP2Zc"
@@ -40,47 +41,47 @@
         "nome": "Juroku",
         "video": "https://www.youtube.com/embed/0Fv0ZBuuGns"
       }
-    ],
-    "kyu": 6
+    ]
   },
   {
-    "katas": [
+    "kyu": 5,
+    "videos": [
       {
         "nome": "Heian Sandan",
         "video": "https://www.youtube.com/embed/FbBZeL4kqWo"
       }
-    ],
-    "kyu": 5
+    ]
   },
   {
-    "katas": [
+    "kyu": 4,
+    "videos": [
       {
         "nome": "Heian Yondan",
         "video": "https://www.youtube.com/embed/1J8xMnXVUkA"
       }
-    ],
-    "kyu": 4
+    ]
   },
   {
-    "katas": [
+    "kyu": 3,
+    "videos": [
       {
         "nome": "Heian Godan",
         "video": "https://www.youtube.com/embed/9FQ5O9RMr9I"
       }
-    ],
-    "kyu": 3
+    ]
   },
   {
-    "katas": [
+    "kyu": 2,
+    "videos": [
       {
         "nome": "Heian Nidan - BUNKAI",
         "video": "https://www.youtube.com/embed/fQaF7gnvLyY"
       }
-    ],
-    "kyu": 2
+    ]
   },
   {
-    "katas": [
+    "kyu": 1,
+    "videos": [
       {
         "nome": "Bassai Dai",
         "video": "https://www.youtube.com/embed/q1YqGOAAEgs"
@@ -89,11 +90,11 @@
         "nome": "Heian Shodan - BUNKAI",
         "video": "https://www.youtube.com/embed/lFk72ES8gpg"
       }
-    ],
-    "kyu": 1
+    ]
   },
   {
-    "katas": [
+    "kyu": 0,
+    "videos": [
       {
         "nome": "Seienchin",
         "video": "https://www.youtube.com/embed/eTrz8jHVEcc"
@@ -102,11 +103,11 @@
         "nome": "Heian Sandan - BUNKAI",
         "video": "https://www.youtube.com/embed/576UDmhssRE"
       }
-    ],
-    "kyu": 0
+    ]
   },
   {
-    "katas": [
+    "kyu": -1,
+    "videos": [
       {
         "nome": "Kosokun Dai",
         "video": "https://www.youtube.com/embed/f_3oHMFOh4I"
@@ -115,7 +116,6 @@
         "nome": "Bassai Dai - BUNKAI",
         "video": "https://www.youtube.com/embed/R3VRjqkDr-I"
       }
-    ],
-    "kyu": -1
+    ]
   }
 ]
