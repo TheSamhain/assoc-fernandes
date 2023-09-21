@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import Colors from '../../constants/Colors';
 import { FaixaGroupProps } from '../../interfaces/FaixaGroupProps';
+import { getContrastingTextColor } from '../../utils/Colors';
 
 const ChipGroup: React.FC<FaixaGroupProps> = (kyu) => {
   return (
@@ -15,7 +15,7 @@ const ChipGroup: React.FC<FaixaGroupProps> = (kyu) => {
       <Text
         style={{
           ...styles.chipText,
-          color: kyu.fonteEscura ? Colors.light.text : Colors.dark.text,
+          color: getContrastingTextColor(kyu.cor),
         }}
       >
         {kyu.faixa}

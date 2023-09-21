@@ -14,7 +14,6 @@ export default function TabKataScreen() {
         ...kata,
         faixa: 'Branca',
         cor: '#FFFFFF',
-        fonteEscura: true,
         pontaPreta: false,
       };
     }

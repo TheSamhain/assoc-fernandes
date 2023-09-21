@@ -1,10 +1,10 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, ViewStyle, View, TouchableOpacity } from 'react-native';
 
 import { KyuProps } from '../../interfaces/KyuProps';
+import { getContrastingTextColor } from '../../utils/Colors';
 import { Text } from '../Themed';
 
 interface KyuIconsProps {
@@ -25,7 +25,7 @@ const kyuIcons: KyuIconsProps = {
   '-1': 'school',
 };
 
-const ItemExameFaixa: React.FC<KyuProps> = ({ kyu, faixa, cor, fonteEscura, pontaPreta }) => {
+const ItemExameFaixa: React.FC<KyuProps> = ({ kyu, faixa, cor, pontaPreta }) => {
   const router = useRouter();
 
   const containerStyle: ViewStyle = {
@@ -34,7 +34,7 @@ const ItemExameFaixa: React.FC<KyuProps> = ({ kyu, faixa, cor, fonteEscura, pont
     borderColor: pontaPreta ? '#000000' : cor,
   };
 
-  const color = fonteEscura ? DefaultTheme.colors.text : DarkTheme.colors.text;
+  const color = getContrastingTextColor(cor);
 
   return (
     <TouchableOpacity
@@ -46,7 +46,6 @@ const ItemExameFaixa: React.FC<KyuProps> = ({ kyu, faixa, cor, fonteEscura, pont
             kyu,
             faixa,
             cor,
-            fonteEscura,
           },
         })
       }

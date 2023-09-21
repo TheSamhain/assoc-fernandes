@@ -6,6 +6,7 @@ import { StyleSheet, ActivityIndicator, useColorScheme, ViewStyle, ScrollView } 
 import ExameData from '../../../assets/data/exame.json';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
+import { getContrastingTextColor } from '../../../utils/Colors';
 
 const ExameFaixaDetalhes = () => {
   const colorScheme = useColorScheme() ?? 'light';
@@ -15,11 +16,10 @@ const ExameFaixaDetalhes = () => {
     backgroundColor: colorScheme === 'light' ? DefaultTheme.colors.card : DarkTheme.colors.card,
   };
 
-  const { kyu, faixa, cor, fonteEscura } = useLocalSearchParams<{
+  const { kyu, faixa, cor } = useLocalSearchParams<{
     kyu: string;
     faixa: string;
     cor: string;
-    fonteEscura: string;
   }>();
 
   const data = ExameData.find((item) => item.kyu === Number(kyu));
@@ -28,7 +28,7 @@ const ExameFaixaDetalhes = () => {
     const title = faixa || 'Detalhes';
     navigation.setOptions({
       title,
-      headerTintColor: fonteEscura === 'true' ? DefaultTheme.colors.text : DarkTheme.colors.text,
+      headerTintColor: getContrastingTextColor(cor || '#FFFFFF'),
       headerStyle: {
         backgroundColor: cor,
       },

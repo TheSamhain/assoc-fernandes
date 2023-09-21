@@ -9,10 +9,12 @@
 
 # TODO
 
-- Colocar zoom nas imagens
 - Transferir dados para BD do firebase
+- Criar tela de criar publicação
+- Colocar zoom nas imagens
+- Criar seleção de cidade nas publicações (Curitibanos, São Cristóvão do Sul, Ponte Alta do Norte, Brunópolis)
 
-# PARA INCLUIR
+# DADOS PARA INCLUIR
 
 ## KATAS
 
