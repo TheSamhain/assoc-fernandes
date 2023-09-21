@@ -30,7 +30,10 @@ const ItemExameFaixa: React.FC<KyuProps> = ({ kyu, faixa, cor, pontaPreta }) => 
 
   const containerStyle: ViewStyle = {
     backgroundColor: cor,
-    borderWidth: 8,
+  };
+
+  const borderStyle: ViewStyle = {
+    borderWidth: 4,
     borderColor: pontaPreta ? '#000000' : cor,
   };
 
@@ -50,11 +53,13 @@ const ItemExameFaixa: React.FC<KyuProps> = ({ kyu, faixa, cor, pontaPreta }) => 
         })
       }
     >
-      <View style={styles.icon}>
-        <MaterialCommunityIcons size={40} name={kyuIcons[kyu] || 'star'} color={color} />
-      </View>
+      <View style={[styles.border, borderStyle]}>
+        <View style={styles.icon}>
+          <MaterialCommunityIcons size={40} name={kyuIcons[kyu] || 'star'} color={color} />
+        </View>
 
-      <Text style={[styles.title, { color }]}>{faixa.replace('ponta', 'p.')}</Text>
+        <Text style={[styles.title, { color }]}>{faixa.replace('ponta', 'p.')}</Text>
+      </View>
     </TouchableOpacity>
   );
 };
@@ -67,10 +72,7 @@ const styles = StyleSheet.create({
     height: 140,
     borderRadius: 8,
     margin: 4,
-    padding: 8,
-    paddingVertical: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
+    padding: 4,
 
     elevation: 5,
     shadowColor: '#000000',
@@ -80,6 +82,15 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
+  },
+
+  border: {
+    padding: 4,
+    paddingVertical: 16,
+    flex: 1,
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   icon: {

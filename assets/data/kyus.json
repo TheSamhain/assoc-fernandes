@@ -6,7 +6,7 @@
     "pontaPreta": false
   },
   {
-    "cor": "#FF6600",
+    "cor": "#f05d27",
     "faixa": "Laranja",
     "kyu": 8,
     "pontaPreta": false
@@ -24,7 +24,7 @@
     "pontaPreta": true
   },
   {
-    "cor": "#00FF00",
+    "cor": "#0d9836",
     "faixa": "Verde",
     "kyu": 5,
     "pontaPreta": false
@@ -36,7 +36,7 @@
     "pontaPreta": false
   },
   {
-    "cor": "#9400d3",
+    "cor": "#680099",
     "faixa": "Roxa",
     "kyu": 3,
     "pontaPreta": false
