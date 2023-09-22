@@ -1,9 +1,8 @@
 import { child, get, ref } from 'firebase/database';
 import { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, ActivityIndicator, useColorScheme } from 'react-native';
+import { StyleSheet, ActivityIndicator, useColorScheme, FlatList, SafeAreaView } from 'react-native';
 
 import Kyus from '../../assets/data/kyus.json';
-import { View } from '../../components/Themed';
 import FaixaGroup from '../../components/katas/FaixaGroup';
 import Colors from '../../constants/Colors';
 import { FaixaGroupProps } from '../../interfaces/FaixaGroupProps';
@@ -40,15 +39,15 @@ export default function TabKataScreen() {
   }, []);
 
   return (
-    <View style={styles.page}>
-      <ScrollView style={styles.container}>
-        {katasFaixas.length ? (
-          katasFaixas.map((item) => <FaixaGroup {...item} key={item.kyu} />)
-        ) : (
-          <ActivityIndicator size='large' color={Colors[theme].text} />
-        )}
-      </ScrollView>
-    </View>
+    <SafeAreaView style={styles.page}>
+      <FlatList
+        data={katasFaixas}
+        renderItem={({ item }) => <FaixaGroup {...item} />}
+        keyExtractor={(item, index) => `${item.kyu}_${index}`}
+        style={styles.container}
+        ListEmptyComponent={<ActivityIndicator style={styles.load} size='large' color={Colors[theme].text} />}
+      />
+    </SafeAreaView>
   );
 }
 
@@ -60,5 +59,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
+  },
+  load: {
+    marginVertical: '50%',
   },
 });
