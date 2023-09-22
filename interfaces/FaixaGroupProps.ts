@@ -1,10 +1,10 @@
 import { KyuProps } from './KyuProps';
 
-interface KataProps {
+interface VideoProps {
   nome: string;
   video: string;
 }
 
 export interface FaixaGroupProps extends KyuProps {
-  videos: KataProps[];
+  videos: VideoProps[];
 }

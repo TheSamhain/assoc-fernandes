@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { getAnalytics } from 'firebase/analytics';
 import { initializeApp } from 'firebase/app';
+import { getDatabase } from 'firebase/database';
 import { getStorage } from 'firebase/storage';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -10,6 +11,7 @@ import { getStorage } from 'firebase/storage';
 const firebaseConfig = {
   apiKey: 'AIzaSyCAGXgKxJqCR-mQz9DXtXA_4CIGhLsKPW4',
   authDomain: 'assoc-fernandes-karate.firebaseapp.com',
+  databaseURL: 'https://assoc-fernandes-karate-default-rtdb.firebaseio.com',
   projectId: 'assoc-fernandes-karate',
   storageBucket: 'assoc-fernandes-karate.appspot.com',
   messagingSenderId: '375857408786',
@@ -23,3 +25,6 @@ export const firebaseAnalytics = getAnalytics(firebaseApp);
 
 // Initialize Cloud Storage and get a reference to the service
 export const firebaseStorage = getStorage(firebaseApp);
+
+// Initialize Realtime Database and get a reference to the service
+export const firebaseDatabase = getDatabase(firebaseApp);
