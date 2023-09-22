@@ -1,51 +1,79 @@
 [
   {
+    "data": "21/09/2023",
+    "descricao": "",
+    "galeria": "2023_09_21_Treino_Smelc_Curitibanos_Afk_Pan/",
+    "local": [
+      "Curitibanos",
+      "Ponte Alta do Norte"
+    ],
+    "nome": "Treino Smelc Curitibanos e AFK Pan"
+  },
+  {
     "data": "12/09/2023",
     "descricao": "",
     "galeria": "2023_09_12_Treino/",
-    "local": "São Cristóvão do Sul - SC",
+    "local": [
+      "São Cristóvão do Sul"
+    ],
     "nome": "Treino"
   },
   {
     "data": "07/09/2023",
     "descricao": "",
     "galeria": "2023_07_09_Desfile/",
-    "local": "São Cristóvão do Sul - SC",
+    "local": [
+      "São Cristóvão do Sul"
+    ],
     "nome": "Desfile 7 de Setembro de 2023"
   },
   {
     "data": "26/06/2023",
     "descricao": "",
     "galeria": "2023_08_26_Campeonato_Itajai_LCK/",
-    "local": "Itajai - SC",
+    "local": [
+      "São Cristóvão do Sul",
+      "Curitibanos",
+      "Ponte Alta do Norte",
+      "Brunópolis"
+    ],
     "nome": "Campeonato Open Estadual de Karatê da LCK em Itajaí "
   },
   {
     "data": "15/06/2023",
     "descricao": "",
     "galeria": "2023_06_Entrega_de_Faixa_SCS/",
-    "local": "São Cristóvão do Sul - SC",
+    "local": [
+      "São Cristóvão do Sul"
+    ],
     "nome": "Entrega de faixa em São Cristóvão do Sul"
   },
   {
     "data": "15/06/2023",
     "descricao": "",
     "galeria": "2023_06_05_Sem_Evento/",
-    "local": "São Cristóvão do Sul - SC",
+    "local": [
+      "São Cristóvão do Sul"
+    ],
     "nome": "Treino"
   },
   {
     "data": "11/05/2023",
     "descricao": "Exame de Faixa SCS - Maio 2023",
     "galeria": "2023_05_Exame_Faixa_SCS/",
-    "local": "São Cristóvão do Sul - SC",
+    "local": [
+      "São Cristóvão do Sul"
+    ],
     "nome": "Exame de Faixa São Cristóvão do Sul realizado em 11 de Maio de 2023"
   },
   {
     "data": "15/04/2023",
     "descricao": "Campeonato Estadual da Fecaki (Federação Catarinense de Karatê Interestilos) na cidade de Capinzal",
     "galeria": "2023_04_15_Capinzal_SC_Fecaki/",
-    "local": "Capinzal - SC",
+    "local": [
+      "São Cristóvão do Sul",
+      "Ponte Alta do Norte"
+    ],
     "nome": "Capeonato Estadual de Karatê - Capinzal"
   }
 ]
