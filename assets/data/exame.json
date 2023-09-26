@@ -41,47 +41,21 @@
     "bunkai": [],
     "geri": [
       {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mae Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mawashi Geri (Chute frontal com a perna de trás)"
-      },
-      {
         "descricao": "Avança e recua 3x em base Shiko Dachi.",
         "nome": "Yoko Geri (Chute lateral)"
       }
     ],
     "kata": [
-      "Shiho Uke",
-      "Junino Kata",
       "Aoyagi"
     ],
     "kyu": 8,
     "tsuki": [
       {
-        "descricao": "10 repetições.",
-        "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
-      },
-      {
-        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
-        "nome": "Oi-zuki (Soco em deslocamento)"
-      },
-      {
         "descricao": "Avança 5x e recua 5x em Moto Dachi",
         "nome": "Guiaku Zuki (Soco com braço contrário do quadril do lado que estiver a frente)"
       }
     ],
     "uke": [
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Jodan Uke (Defesa alta)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Gedan Barai (Defesa baixa)"
-      },
       {
         "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
         "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
@@ -92,60 +66,21 @@
     "bunkai": [],
     "geri": [
       {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mae Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mawashi Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança e recua 3x em base Shiko Dachi.",
-        "nome": "Yoko Geri (Chute lateral)"
-      },
-      {
         "descricao": "Avança chutando mesma perna, vira e recua com o mesmo movimento.",
         "nome": "Mae-Mawashi Geri"
       }
     ],
     "kata": [
-      "Shiho Uke",
-      "Junino Kata",
-      "Aoyagi",
       "Heian Nidan"
     ],
     "kyu": 7,
     "tsuki": [
       {
-        "descricao": "10 repetições.",
-        "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
-      },
-      {
-        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
-        "nome": "Oi-zuki (Soco em deslocamento)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em Moto Dachi",
-        "nome": "Guiaku Zuki (Soco com braço contrário do quadril do lado que estiver a frente)"
-      },
-      {
         "descricao": "Avança 5x vira e retorna com mesmo movimento",
         "nome": "Kette Zuki (soco com chute embaixo da mão mesmo lado)"
       }
     ],
     "uke": [
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Jodan Uke (Defesa alta)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Gedan Barai (Defesa baixa)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
-      },
       {
         "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
         "nome": "Soto Uke"
@@ -154,149 +89,38 @@
   },
   {
     "bunkai": [],
-    "geri": [
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mae Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mawashi Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança e recua 3x em base Shiko Dachi.",
-        "nome": "Yoko Geri (Chute lateral)"
-      },
-      {
-        "descricao": "Avança chutando mesma perna, vira e recua com o mesmo movimento.",
-        "nome": "Mae-Mawashi Geri"
-      }
-    ],
+    "geri": [],
     "kata": [
-      "Shiho Uke",
-      "Junino Kata",
-      "Aoyagi",
-      "Heian Nidan",
       "Heian Shodan"
     ],
     "kyu": 6,
     "tsuki": [
       {
-        "descricao": "10 repetições.",
-        "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
-      },
-      {
-        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
-        "nome": "Oi-zuki (Soco em deslocamento)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em Moto Dachi",
-        "nome": "Guiaku Zuki (Soco com braço contrário do quadril do lado que estiver a frente)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Zuki (soco com chute embaixo da mão mesmo lado)"
-      },
-      {
         "descricao": "Avança 5x vira e retorna com mesmo movimento",
         "nome": "Kette Guiaku Zuki (soco contrário ao quadril com chute embaixo da mão que soca)"
       }
     ],
-    "uke": [
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Jodan Uke (Defesa alta)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Gedan Barai (Defesa baixa)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Soto Uke"
-      }
-    ]
+    "uke": []
   },
   {
     "bunkai": [],
     "geri": [
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mae Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mawashi Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança e recua 3x em base Shiko Dachi.",
-        "nome": "Yoko Geri (Chute lateral)"
-      },
-      {
-        "descricao": "Avança chutando mesma perna, vira e recua com o mesmo movimento.",
-        "nome": "Mae-Mawashi Geri"
-      },
       {
         "descricao": "Avança, chutando Maegeri com uma perna e Mawashi Geri com a outra vira e retorna com o mesmo movimento",
         "nome": "Maegeri e Mawashi Geri"
       }
     ],
     "kata": [
-      "Shiho Uke",
-      "Junino Kata",
-      "Aoyagi",
-      "Heian Nidan",
-      "Heian Shodan",
       "Heian Sandan"
     ],
     "kyu": 5,
     "tsuki": [
       {
-        "descricao": "10 repetições.",
-        "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
-      },
-      {
-        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
-        "nome": "Oi-zuki (Soco em deslocamento)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em Moto Dachi",
-        "nome": "Guiaku Zuki (Soco com braço contrário do quadril do lado que estiver a frente)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Zuki (soco com chute embaixo da mão mesmo lado)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Guiaku Zuki (soco contrário ao quadril com chute embaixo da mão que soca)"
-      },
-      {
         "descricao": "Avança e recua todos os movimentos em zenkutsu dachi",
         "nome": "Todos os movimentos"
       }
     ],
     "uke": [
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Jodan Uke (Defesa alta)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Gedan Barai (Defesa baixa)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Soto Uke"
-      },
       {
         "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
         "nome": "Shuto Uke"
@@ -307,611 +131,78 @@
     "bunkai": [],
     "geri": [
       {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mae Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mawashi Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança e recua 3x em base Shiko Dachi.",
-        "nome": "Yoko Geri (Chute lateral)"
-      },
-      {
-        "descricao": "Avança chutando mesma perna, vira e recua com o mesmo movimento.",
-        "nome": "Mae-Mawashi Geri"
-      },
-      {
-        "descricao": "Avança, chutando Maegeri com uma perna e Mawashi Geri com a outra vira e retorna com o mesmo movimento",
-        "nome": "Maegeri e Mawashi Geri"
-      },
-      {
         "descricao": "",
         "nome": "Ura Mawashi Geri"
       }
     ],
     "kata": [
-      "Shiho Uke",
-      "Junino Kata",
-      "Aoyagi",
-      "Heian Nidan",
-      "Heian Shodan",
-      "Heian Sandan",
       "Heian Yondan"
     ],
     "kyu": 4,
     "tsuki": [
       {
-        "descricao": "10 repetições.",
-        "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
-      },
-      {
-        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
-        "nome": "Oi-zuki (Soco em deslocamento)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em Moto Dachi",
-        "nome": "Guiaku Zuki (Soco com braço contrário do quadril do lado que estiver a frente)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Zuki (soco com chute embaixo da mão mesmo lado)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Guiaku Zuki (soco contrário ao quadril com chute embaixo da mão que soca)"
-      },
-      {
-        "descricao": "Avança e recua todos os movimentos em zenkutsu dachi",
-        "nome": "Todos os movimentos"
-      },
-      {
         "descricao": "Sai em shuto uke muda para nukite avançando e recua com o mesmo movimento",
         "nome": "Nukite em base Nekoashi Dachi"
       }
     ],
-    "uke": [
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Jodan Uke (Defesa alta)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Gedan Barai (Defesa baixa)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Soto Uke"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
-        "nome": "Shuto Uke"
-      }
-    ]
+    "uke": []
   },
   {
     "bunkai": [],
     "geri": [
       {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mae Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mawashi Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança e recua 3x em base Shiko Dachi.",
-        "nome": "Yoko Geri (Chute lateral)"
-      },
-      {
-        "descricao": "Avança chutando mesma perna, vira e recua com o mesmo movimento.",
-        "nome": "Mae-Mawashi Geri"
-      },
-      {
-        "descricao": "Avança, chutando Maegeri com uma perna e Mawashi Geri com a outra vira e retorna com o mesmo movimento",
-        "nome": "Maegeri e Mawashi Geri"
-      },
-      {
-        "descricao": "",
-        "nome": "Ura Mawashi Geri"
-      },
-      {
         "descricao": "",
         "nome": "Maegeri, Mawashi Geri, Ushiro Yoko Geri"
       }
     ],
     "kata": [
-      "Shiho Uke",
-      "Junino Kata",
-      "Aoyagi",
-      "Heian Nidan",
-      "Heian Shodan",
-      "Heian Sandan",
-      "Heian Yondan",
       "Heian Godan"
     ],
     "kyu": 3,
     "tsuki": [
       {
-        "descricao": "10 repetições.",
-        "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
-      },
-      {
-        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
-        "nome": "Oi-zuki (Soco em deslocamento)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em Moto Dachi",
-        "nome": "Guiaku Zuki (Soco com braço contrário do quadril do lado que estiver a frente)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Zuki (soco com chute embaixo da mão mesmo lado)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Guiaku Zuki (soco contrário ao quadril com chute embaixo da mão que soca)"
-      },
-      {
-        "descricao": "Avança e recua todos os movimentos em zenkutsu dachi",
-        "nome": "Todos os movimentos"
-      },
-      {
-        "descricao": "Sai em shuto uke muda para nukite avançando e recua com o mesmo movimento",
-        "nome": "Nukite em base Nekoashi Dachi"
-      },
-      {
         "descricao": "Kizami Geri, Shuto Uchi e bate Nukite 5x vira e retorna com mesmo movimento",
         "nome": "Base Nekoashi Dachi atacando Shuto Uchi (chute com a perna da frente)"
       }
     ],
-    "uke": [
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Jodan Uke (Defesa alta)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Gedan Barai (Defesa baixa)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Soto Uke"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
-        "nome": "Shuto Uke"
-      }
-    ]
+    "uke": []
   },
   {
-    "bunkai": [
-      "Heian Nidan"
-    ],
-    "geri": [
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mae Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mawashi Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança e recua 3x em base Shiko Dachi.",
-        "nome": "Yoko Geri (Chute lateral)"
-      },
-      {
-        "descricao": "Avança chutando mesma perna, vira e recua com o mesmo movimento.",
-        "nome": "Mae-Mawashi Geri"
-      },
-      {
-        "descricao": "Avança, chutando Maegeri com uma perna e Mawashi Geri com a outra vira e retorna com o mesmo movimento",
-        "nome": "Maegeri e Mawashi Geri"
-      },
-      {
-        "descricao": "",
-        "nome": "Ura Mawashi Geri"
-      },
-      {
-        "descricao": "",
-        "nome": "Maegeri, Mawashi Geri, Ushiro Yoko Geri"
-      }
-    ],
-    "kata": [
-      "Shiho Uke",
-      "Junino Kata",
-      "Aoyagi",
-      "Heian Nidan",
-      "Heian Shodan",
-      "Heian Sandan",
-      "Heian Yondan",
-      "Heian Godan"
-    ],
+    "bunkai": [],
+    "geri": [],
+    "kata": [],
     "kyu": 2,
-    "tsuki": [
-      {
-        "descricao": "10 repetições.",
-        "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
-      },
-      {
-        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
-        "nome": "Oi-zuki (Soco em deslocamento)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em Moto Dachi",
-        "nome": "Guiaku Zuki (Soco com braço contrário do quadril do lado que estiver a frente)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Zuki (soco com chute embaixo da mão mesmo lado)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Guiaku Zuki (soco contrário ao quadril com chute embaixo da mão que soca)"
-      },
-      {
-        "descricao": "Avança e recua todos os movimentos em zenkutsu dachi",
-        "nome": "Todos os movimentos"
-      },
-      {
-        "descricao": "Sai em shuto uke muda para nukite avançando e recua com o mesmo movimento",
-        "nome": "Nukite em base Nekoashi Dachi"
-      },
-      {
-        "descricao": "Kizami Geri, Shuto Uchi e bate Nukite 5x vira e retorna com mesmo movimento",
-        "nome": "Base Nekoashi Dachi atacando Shuto Uchi (chute com a perna da frente)"
-      }
-    ],
-    "uke": [
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Jodan Uke (Defesa alta)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Gedan Barai (Defesa baixa)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Soto Uke"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
-        "nome": "Shuto Uke"
-      }
-    ]
+    "tsuki": [],
+    "uke": []
   },
   {
-    "bunkai": [
-      "Heian Nidan",
-      "Heian Shodan"
-    ],
-    "geri": [
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mae Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mawashi Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança e recua 3x em base Shiko Dachi.",
-        "nome": "Yoko Geri (Chute lateral)"
-      },
-      {
-        "descricao": "Avança chutando mesma perna, vira e recua com o mesmo movimento.",
-        "nome": "Mae-Mawashi Geri"
-      },
-      {
-        "descricao": "Avança, chutando Maegeri com uma perna e Mawashi Geri com a outra vira e retorna com o mesmo movimento",
-        "nome": "Maegeri e Mawashi Geri"
-      },
-      {
-        "descricao": "",
-        "nome": "Ura Mawashi Geri"
-      },
-      {
-        "descricao": "",
-        "nome": "Maegeri, Mawashi Geri, Ushiro Yoko Geri"
-      }
-    ],
+    "bunkai": [],
+    "geri": [],
     "kata": [
-      "Shiho Uke",
-      "Junino Kata",
-      "Aoyagi",
-      "Heian Nidan",
-      "Heian Shodan",
-      "Heian Sandan",
-      "Heian Yondan",
-      "Heian Godan",
       "Bassai Dai"
     ],
     "kyu": 1,
-    "tsuki": [
-      {
-        "descricao": "10 repetições.",
-        "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
-      },
-      {
-        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
-        "nome": "Oi-zuki (Soco em deslocamento)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em Moto Dachi",
-        "nome": "Guiaku Zuki (Soco com braço contrário do quadril do lado que estiver a frente)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Zuki (soco com chute embaixo da mão mesmo lado)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Guiaku Zuki (soco contrário ao quadril com chute embaixo da mão que soca)"
-      },
-      {
-        "descricao": "Avança e recua todos os movimentos em zenkutsu dachi",
-        "nome": "Todos os movimentos"
-      },
-      {
-        "descricao": "Sai em shuto uke muda para nukite avançando e recua com o mesmo movimento",
-        "nome": "Nukite em base Nekoashi Dachi"
-      },
-      {
-        "descricao": "Kizami Geri, Shuto Uchi e bate Nukite 5x vira e retorna com mesmo movimento",
-        "nome": "Base Nekoashi Dachi atacando Shuto Uchi (chute com a perna da frente)"
-      }
-    ],
-    "uke": [
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Jodan Uke (Defesa alta)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Gedan Barai (Defesa baixa)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Soto Uke"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
-        "nome": "Shuto Uke"
-      }
-    ]
+    "tsuki": [],
+    "uke": []
   },
   {
-    "bunkai": [
-      "Heian Nidan",
-      "Heian Shodan",
-      "Heian Sandan"
-    ],
-    "geri": [
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mae Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mawashi Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança e recua 3x em base Shiko Dachi.",
-        "nome": "Yoko Geri (Chute lateral)"
-      },
-      {
-        "descricao": "Avança chutando mesma perna, vira e recua com o mesmo movimento.",
-        "nome": "Mae-Mawashi Geri"
-      },
-      {
-        "descricao": "Avança, chutando Maegeri com uma perna e Mawashi Geri com a outra vira e retorna com o mesmo movimento",
-        "nome": "Maegeri e Mawashi Geri"
-      },
-      {
-        "descricao": "",
-        "nome": "Ura Mawashi Geri"
-      },
-      {
-        "descricao": "",
-        "nome": "Maegeri, Mawashi Geri, Ushiro Yoko Geri"
-      }
-    ],
+    "bunkai": [],
+    "geri": [],
     "kata": [
-      "Shiho Uke",
-      "Junino Kata",
-      "Aoyagi",
-      "Heian Nidan",
-      "Heian Shodan",
-      "Heian Sandan",
-      "Heian Yondan",
-      "Heian Godan",
-      "Bassai Dai",
       "Seienchin"
     ],
     "kyu": 0,
-    "tsuki": [
-      {
-        "descricao": "10 repetições.",
-        "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
-      },
-      {
-        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
-        "nome": "Oi-zuki (Soco em deslocamento)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em Moto Dachi",
-        "nome": "Guiaku Zuki (Soco com braço contrário do quadril do lado que estiver a frente)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Zuki (soco com chute embaixo da mão mesmo lado)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Guiaku Zuki (soco contrário ao quadril com chute embaixo da mão que soca)"
-      },
-      {
-        "descricao": "Avança e recua todos os movimentos em zenkutsu dachi",
-        "nome": "Todos os movimentos"
-      },
-      {
-        "descricao": "Sai em shuto uke muda para nukite avançando e recua com o mesmo movimento",
-        "nome": "Nukite em base Nekoashi Dachi"
-      },
-      {
-        "descricao": "Kizami Geri, Shuto Uchi e bate Nukite 5x vira e retorna com mesmo movimento",
-        "nome": "Base Nekoashi Dachi atacando Shuto Uchi (chute com a perna da frente)"
-      }
-    ],
-    "uke": [
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Jodan Uke (Defesa alta)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Gedan Barai (Defesa baixa)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Soto Uke"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
-        "nome": "Shuto Uke"
-      }
-    ]
+    "tsuki": [],
+    "uke": []
   },
   {
-    "bunkai": [
-      "Heian Nidan",
-      "Heian Shodan",
-      "Heian Sandan",
-      "Bassai Dai"
-    ],
-    "geri": [
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mae Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança 5x chutando, vira e volta em Maegeri novamente",
-        "nome": "Mawashi Geri (Chute frontal com a perna de trás)"
-      },
-      {
-        "descricao": "Avança e recua 3x em base Shiko Dachi.",
-        "nome": "Yoko Geri (Chute lateral)"
-      },
-      {
-        "descricao": "Avança chutando mesma perna, vira e recua com o mesmo movimento.",
-        "nome": "Mae-Mawashi Geri"
-      },
-      {
-        "descricao": "Avança, chutando Maegeri com uma perna e Mawashi Geri com a outra vira e retorna com o mesmo movimento",
-        "nome": "Maegeri e Mawashi Geri"
-      },
-      {
-        "descricao": "",
-        "nome": "Ura Mawashi Geri"
-      },
-      {
-        "descricao": "",
-        "nome": "Maegeri, Mawashi Geri, Ushiro Yoko Geri"
-      }
-    ],
+    "bunkai": [],
+    "geri": [],
     "kata": [
-      "Shiho Uke",
-      "Junino Kata",
-      "Aoyagi",
-      "Heian Nidan",
-      "Heian Shodan",
-      "Heian Sandan",
-      "Heian Yondan",
-      "Heian Godan",
-      "Bassai Dai",
-      "Seienchin",
       "Kosokun Dai"
     ],
     "kyu": -1,
-    "tsuki": [
-      {
-        "descricao": "10 repetições.",
-        "nome": "Sonobazuki em Shiko Dachi (Soco parado)"
-      },
-      {
-        "descricao": "Avança 5x e recuando 5x em base Moto Dachi",
-        "nome": "Oi-zuki (Soco em deslocamento)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em Moto Dachi",
-        "nome": "Guiaku Zuki (Soco com braço contrário do quadril do lado que estiver a frente)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Zuki (soco com chute embaixo da mão mesmo lado)"
-      },
-      {
-        "descricao": "Avança 5x vira e retorna com mesmo movimento",
-        "nome": "Kette Guiaku Zuki (soco contrário ao quadril com chute embaixo da mão que soca)"
-      },
-      {
-        "descricao": "Avança e recua todos os movimentos em zenkutsu dachi",
-        "nome": "Todos os movimentos"
-      },
-      {
-        "descricao": "Sai em shuto uke muda para nukite avançando e recua com o mesmo movimento",
-        "nome": "Nukite em base Nekoashi Dachi"
-      },
-      {
-        "descricao": "Kizami Geri, Shuto Uchi e bate Nukite 5x vira e retorna com mesmo movimento",
-        "nome": "Base Nekoashi Dachi atacando Shuto Uchi (chute com a perna da frente)"
-      }
-    ],
-    "uke": [
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Jodan Uke (Defesa alta)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Gedan Barai (Defesa baixa)"
-      },
-      {
-        "descricao": "Avança 5x e recua 5x em base Zenkutsu Dachi",
-        "nome": "Yoko Uke (defesa de dentro para fora altura tchudan - peito)"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento. Em base Zenkutsu Dachi",
-        "nome": "Soto Uke"
-      },
-      {
-        "descricao": "Avança 5x e recua com o mesmo movimento em base Nekoashi Dachi",
-        "nome": "Shuto Uke"
-      }
-    ]
+    "tsuki": [],
+    "uke": []
   }
 ]

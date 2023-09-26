@@ -22,7 +22,33 @@ const ExameFaixaDetalhes = () => {
     cor: string;
   }>();
 
-  const data = ExameData.find((item) => item.kyu === Number(kyu));
+  const data = ExameData.sort((a, b) => b.kyu - a.kyu).reduce(
+    (acc, cur) => {
+      if (cur.kyu < Number(kyu)) {
+        return acc;
+      }
+
+      acc.bunkai.push(...cur.bunkai);
+      acc.geri.push(...cur.geri);
+      acc.kata.push(...cur.kata);
+      acc.tsuki.push(...cur.tsuki);
+      acc.uke.push(...cur.uke);
+
+      if (cur.kyu === Number(kyu)) {
+        acc.kyu = Number(kyu);
+      }
+
+      return acc;
+    },
+    {
+      bunkai: [],
+      geri: [],
+      kata: [],
+      kyu: 10,
+      tsuki: [],
+      uke: [],
+    },
+  );
 
   useEffect(() => {
     const title = faixa || 'Detalhes';
