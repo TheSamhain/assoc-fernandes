@@ -9,7 +9,7 @@ const ExameFaixaLayout = () => {
       <Stack.Screen name='index' options={{ title: 'Exame de faixa' }} />
 
       <Stack.Screen
-        name='detalhes'
+        name='[kyu]'
         options={{
           title: 'Exame de faixa - Detalhes',
           headerShown: true,

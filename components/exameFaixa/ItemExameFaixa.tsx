@@ -42,16 +42,7 @@ const ItemExameFaixa: React.FC<KyuProps> = ({ kyu, faixa, cor, pontaPreta }) => 
   return (
     <TouchableOpacity
       style={[styles.item, containerStyle]}
-      onPress={() =>
-        router.push({
-          pathname: 'exameFaixa/detalhes',
-          params: {
-            kyu,
-            faixa,
-            cor,
-          },
-        })
-      }
+      onPress={() => router.push({ pathname: 'exameFaixa/' + kyu })}
     >
       <View style={[styles.border, borderStyle]}>
         <View style={styles.icon}>

@@ -4,6 +4,7 @@ import { child, get, ref } from 'firebase/database';
 import React, { useEffect, useMemo, useState } from 'react';
 import { StyleSheet, ActivityIndicator, useColorScheme, ViewStyle, ScrollView } from 'react-native';
 
+import Kyus from '../../../assets/data/kyus.json';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 import { ExameData } from '../../../interfaces/ExameData';
@@ -18,13 +19,15 @@ const ExameFaixaDetalhes = () => {
     backgroundColor: colorScheme === 'light' ? DefaultTheme.colors.card : DarkTheme.colors.card,
   };
 
-  const { kyu, faixa, cor } = useLocalSearchParams<{
+  const { kyu } = useLocalSearchParams<{
     kyu: string;
-    faixa: string;
-    cor: string;
   }>();
 
   const [exameData, setExameData] = useState<ExameData[]>([]);
+  const [kyuData, setKyuData] = useState({
+    cor: '#000000',
+    faixa: '',
+  });
 
   useEffect(() => {
     const dbRef = ref(firebaseDatabase);
@@ -36,10 +39,14 @@ const ExameFaixaDetalhes = () => {
       }
     });
 
-    const title = faixa || 'Detalhes';
+    const itemKyu = Kyus.find((item) => item.kyu === Number(kyu));
+
+    const title = itemKyu ? itemKyu.faixa : 'Detalhes';
+    const cor = itemKyu ? itemKyu.cor : '#000000';
+
     navigation.setOptions({
       title,
-      headerTintColor: getContrastingTextColor(cor || '#FFFFFF'),
+      headerTintColor: getContrastingTextColor(cor),
       headerStyle: {
         backgroundColor: cor,
       },
