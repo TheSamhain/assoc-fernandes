@@ -7,6 +7,7 @@ const ExameFaixaLayout = () => {
   return (
     <Stack screenOptions={{ headerRight: () => <Logo /> }}>
       <Stack.Screen name='index' options={{ title: 'Menu' }} />
+      <Stack.Screen name='editarKatas' options={{ title: 'Editar Katas' }} />
     </Stack>
   );
 };
