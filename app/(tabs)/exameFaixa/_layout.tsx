@@ -1,9 +1,11 @@
 import { Stack } from 'expo-router';
 import React from 'react';
 
+import Logo from '../../../components/Logo';
+
 const ExameFaixaLayout = () => {
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack screenOptions={{ headerRight: () => <Logo /> }}>
       <Stack.Screen name='index' options={{ title: 'Exame de faixa' }} />
 
       <Stack.Screen
@@ -12,6 +14,7 @@ const ExameFaixaLayout = () => {
           title: 'Exame de faixa - Detalhes',
           headerShown: true,
           headerShadowVisible: false,
+          headerRight: undefined,
         }}
       />
     </Stack>

@@ -43,6 +43,16 @@ export default function TabLayout() {
         options={{
           title: 'Exame faixa',
           tabBarIcon: ({ color }) => <TabBarIcon name='chevron-triple-up' color={color} />,
+          headerShown: false,
+        }}
+      />
+
+      <Tabs.Screen
+        name='menu'
+        options={{
+          title: 'Menu',
+          tabBarIcon: ({ color }) => <TabBarIcon name='dots-vertical' color={color} />,
+          headerShown: false,
         }}
       />
     </Tabs>
