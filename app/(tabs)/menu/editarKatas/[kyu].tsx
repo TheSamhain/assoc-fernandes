@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, useColorScheme } from 'react-native';
 
 import KyusList from '../../../../assets/data/kyus.json';
-import { SafeAreaView, Text } from '../../../../components/Themed';
+import NewKataCard from '../../../../components/editarKatas/NewKataCard';
+import { SafeAreaView } from '../../../../components/Themed';
 import Colors from '../../../../constants/Colors';
 import { KatasProps, KataVideoProps } from '../../../../interfaces/KatasProps';
 import { getContrastingTextColor } from '../../../../utils/Colors';
@@ -50,7 +51,7 @@ const ScreenEditKyu = () => {
     <SafeAreaView style={styles.page}>
       <FlatList
         data={videos}
-        renderItem={({ item }) => <Text>{item.nome}</Text>}
+        renderItem={({ item }) => <NewKataCard {...item} />}
         keyExtractor={(item, index) => `${item.nome}_${index}`}
         style={styles.container}
         ListEmptyComponent={<ActivityIndicator style={styles.load} size='large' color={Colors[theme].text} />}

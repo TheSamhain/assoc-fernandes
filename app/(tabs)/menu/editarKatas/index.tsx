@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     width: 500,
     maxWidth: '100%',
+    alignSelf: 'center',
   },
   load: {
     marginVertical: '50%',
