@@ -7,7 +7,7 @@ import KyusList from '../../../../assets/data/kyus.json';
 import NewKataCard from '../../../../components/editarKatas/NewKataCard';
 import { SafeAreaView } from '../../../../components/Themed';
 import Colors from '../../../../constants/Colors';
-import { KatasProps, KataVideoProps } from '../../../../interfaces/KatasProps';
+import { KataVideoProps } from '../../../../interfaces/KatasProps';
 import { getContrastingTextColor } from '../../../../utils/Colors';
 import { firebaseDatabase } from '../../../../utils/firebaseConfig';
 
@@ -20,18 +20,16 @@ const ScreenEditKyu = () => {
 
   useEffect(() => {
     const dbRef = ref(firebaseDatabase);
-    get(child(dbRef, 'katas')).then((snapshot) => {
+    get(child(dbRef, 'katas/' + kyu)).then((snapshot) => {
       if (snapshot.exists()) {
-        const katas: KatasProps[] = snapshot.val();
+        const videos: KataVideoProps[] = [];
 
-        for (const kata of katas) {
-          if (kata.kyu !== Number(kyu)) {
-            continue;
-          }
+        snapshot.forEach((item) => {
+          const video = item.val();
+          videos.push({ ...video, uuid: item.key });
+        });
 
-          setVideos(kata.videos);
-          break;
-        }
+        setVideos(videos);
       }
     });
 
@@ -51,7 +49,7 @@ const ScreenEditKyu = () => {
     <SafeAreaView style={styles.page}>
       <FlatList
         data={videos}
-        renderItem={({ item }) => <NewKataCard {...item} />}
+        renderItem={({ item, index }) => <NewKataCard kyu={Number(kyu)} {...item} />}
         keyExtractor={(item, index) => `${item.nome}_${index}`}
         style={styles.container}
         ListEmptyComponent={<ActivityIndicator style={styles.load} size='large' color={Colors[theme].text} />}

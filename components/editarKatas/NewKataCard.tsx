@@ -1,16 +1,20 @@
+import { child, push, ref, set } from 'firebase/database';
 import React, { useState } from 'react';
 import { Button, StyleSheet, TextInput, useColorScheme } from 'react-native';
 
 import Colors from '../../constants/Colors';
+import { firebaseDatabase } from '../../utils/firebaseConfig';
 import { youtubeParser } from '../../utils/General';
 import { Text, View } from '../Themed';
 
 interface NewKataCardProps {
   nome: string;
   video: string;
+  uuid?: string;
+  kyu: number;
 }
 
-const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video }) => {
+const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video, kyu, uuid }) => {
   const theme = useColorScheme() ?? 'light';
 
   const [name, setName] = useState(nome);
@@ -18,7 +22,17 @@ const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video }) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const saveItem = () => {
-    console.log('sabe item');
+    const dbRef = ref(firebaseDatabase);
+
+    const kataKey = 'katas/' + kyu;
+
+    const kataId = uuid || push(child(dbRef, kataKey)).key;
+
+    set(ref(firebaseDatabase, `${kataKey}/${kataId}`), {
+      nome: name,
+      video: 'https://www.youtube.com/embed/' + ytVideoID,
+    });
+
     setIsEditing(false);
   };
 

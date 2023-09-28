@@ -6,7 +6,7 @@ import Kyus from '../../assets/data/kyus.json';
 import FaixaGroup from '../../components/katas/FaixaGroup';
 import Colors from '../../constants/Colors';
 import { FaixaGroupProps } from '../../interfaces/FaixaGroupProps';
-import { KatasProps } from '../../interfaces/KatasProps';
+import { KataVideoProps } from '../../interfaces/KatasProps';
 import { firebaseDatabase } from '../../utils/firebaseConfig';
 
 export default function TabKataScreen() {
@@ -17,20 +17,29 @@ export default function TabKataScreen() {
     const dbRef = ref(firebaseDatabase);
     get(child(dbRef, 'katas')).then((snapshot) => {
       if (snapshot.exists()) {
-        const katas: KatasProps[] = snapshot.val();
-        const katasParsed = katas.map((kata) => {
-          const kyu = Kyus.find((kyuList) => kyuList.kyu === kata.kyu);
+        const katasParsed: FaixaGroupProps[] = [];
+
+        snapshot.forEach((kyuDB) => {
+          const videos: KataVideoProps[] = [];
+
+          kyuDB.forEach((item) => {
+            const video = item.val();
+            videos.push({ ...video, uuid: item.key });
+          });
+
+          const kyu = Kyus.find((kyuList) => kyuList.kyu === Number(kyuDB.key));
 
           if (!kyu) {
-            return {
-              ...kata,
+            katasParsed.push({
+              videos,
               faixa: 'Branca',
               cor: '#FFFFFF',
               pontaPreta: false,
-            };
+              kyu: 0,
+            });
+          } else {
+            katasParsed.push({ videos, ...kyu });
           }
-
-          return { ...kata, ...kyu };
         });
 
         setKatasFaixas(katasParsed);
