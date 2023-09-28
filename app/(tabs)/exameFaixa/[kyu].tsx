@@ -24,10 +24,6 @@ const ExameFaixaDetalhes = () => {
   }>();
 
   const [exameData, setExameData] = useState<ExameData[]>([]);
-  const [kyuData, setKyuData] = useState({
-    cor: '#000000',
-    faixa: '',
-  });
 
   useEffect(() => {
     const dbRef = ref(firebaseDatabase);
@@ -52,6 +48,7 @@ const ExameFaixaDetalhes = () => {
       },
     });
   }, []);
+
   const data = useMemo(
     () =>
       exameData
@@ -115,7 +112,7 @@ const ExameFaixaDetalhes = () => {
         <ActivityIndicator size='large' color={Colors[colorScheme].text} />
       ) : (
         data.uke.map((item) => (
-          <Text style={styles.data}>
+          <Text style={styles.data} key={item.nome}>
             <Text style={styles.dataName}>{item.nome}</Text>: {item.descricao}
           </Text>
         ))
@@ -126,7 +123,7 @@ const ExameFaixaDetalhes = () => {
         <ActivityIndicator size='large' color={Colors[colorScheme].text} />
       ) : (
         data.tsuki.map((item) => (
-          <Text style={styles.data}>
+          <Text style={styles.data} key={item.nome}>
             <Text style={styles.dataName}>{item.nome}</Text>: {item.descricao}
           </Text>
         ))
@@ -137,7 +134,7 @@ const ExameFaixaDetalhes = () => {
         <ActivityIndicator size='large' color={Colors[colorScheme].text} />
       ) : (
         data.geri.map((item) => (
-          <Text style={styles.data}>
+          <Text style={styles.data} key={item.nome}>
             <Text style={styles.dataName}>{item.nome}</Text>: {item.descricao}
           </Text>
         ))
@@ -147,14 +144,20 @@ const ExameFaixaDetalhes = () => {
       {!data || !data.kata.length ? (
         <ActivityIndicator size='large' color={Colors[colorScheme].text} />
       ) : (
-        data.kata.map((item) => <Text style={styles.data}>{item}</Text>)
+        data.kata.map((item) => (
+          <Text style={styles.data} key={item}>
+            {item}
+          </Text>
+        ))
       )}
 
       {data.bunkai && data.bunkai.length ? (
         <>
           <Text style={styles.title}>Bunkai</Text>
           {data.bunkai.map((item) => (
-            <Text style={styles.data}>{item}</Text>
+            <Text style={styles.data} key={item}>
+              {item}
+            </Text>
           ))}
         </>
       ) : (

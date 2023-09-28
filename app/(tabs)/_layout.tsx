@@ -50,8 +50,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name='menu'
         options={{
-          title: 'Menu',
-          tabBarIcon: ({ color }) => <TabBarIcon name='dots-vertical' color={color} />,
+          title: 'Acesso restrito',
+          tabBarIcon: ({ color }) => <TabBarIcon name='shield-lock' color={color} />,
           headerShown: false,
         }}
       />
