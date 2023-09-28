@@ -1,10 +1,10 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { Button, Modal, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
+import { Button, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 
-import { Text, SafeAreaView, View } from '../../../components/Themed';
+import { SafeAreaView, Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 
 const ScreenMenu = () => {

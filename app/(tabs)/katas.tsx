@@ -1,6 +1,6 @@
 import { child, get, ref } from 'firebase/database';
 import { useEffect, useState } from 'react';
-import { StyleSheet, ActivityIndicator, useColorScheme, FlatList, SafeAreaView } from 'react-native';
+import { ActivityIndicator, FlatList, SafeAreaView, StyleSheet, useColorScheme } from 'react-native';
 
 import Kyus from '../../assets/data/kyus.json';
 import FaixaGroup from '../../components/katas/FaixaGroup';

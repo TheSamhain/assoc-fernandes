@@ -1,16 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { FaixaGroupProps } from '../../interfaces/FaixaGroupProps';
+import { KyuProps } from '../../interfaces/KyuProps';
 import { getContrastingTextColor } from '../../utils/Colors';
 
-const ChipGroup: React.FC<FaixaGroupProps> = (kyu) => {
+interface ChipGroupProps extends KyuProps {
+  onPress?: () => void | Promise<void>;
+}
+
+const ChipGroup: React.FC<ChipGroupProps> = (kyu) => {
   return (
-    <View
+    <TouchableOpacity
+      onPress={kyu.onPress}
       style={{
         ...styles.chip,
         backgroundColor: kyu.cor,
       }}
+      disabled={!kyu.onPress}
     >
       <Text
         style={{
@@ -22,7 +28,7 @@ const ChipGroup: React.FC<FaixaGroupProps> = (kyu) => {
       </Text>
 
       {kyu.pontaPreta && <View style={styles.pontaPreta} />}
-    </View>
+    </TouchableOpacity>
   );
 };
 

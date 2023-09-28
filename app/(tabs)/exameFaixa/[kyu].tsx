@@ -1,8 +1,7 @@
-import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import { child, get, ref } from 'firebase/database';
 import React, { useEffect, useMemo, useState } from 'react';
-import { StyleSheet, ActivityIndicator, useColorScheme, ViewStyle, ScrollView } from 'react-native';
+import { ActivityIndicator, ScrollView, StyleSheet, useColorScheme, ViewStyle } from 'react-native';
 
 import Kyus from '../../../assets/data/kyus.json';
 import { Text, View } from '../../../components/Themed';
@@ -12,16 +11,14 @@ import { getContrastingTextColor } from '../../../utils/Colors';
 import { firebaseDatabase } from '../../../utils/firebaseConfig';
 
 const ExameFaixaDetalhes = () => {
-  const colorScheme = useColorScheme() ?? 'light';
+  const theme = useColorScheme() ?? 'light';
   const navigation = useNavigation();
 
   const pageStyle: ViewStyle = {
-    backgroundColor: colorScheme === 'light' ? DefaultTheme.colors.card : DarkTheme.colors.card,
+    backgroundColor: Colors[theme].cardBackground,
   };
 
-  const { kyu } = useLocalSearchParams<{
-    kyu: string;
-  }>();
+  const { kyu } = useLocalSearchParams<{ kyu: string }>();
 
   const [exameData, setExameData] = useState<ExameData[]>([]);
 
@@ -100,7 +97,7 @@ const ExameFaixaDetalhes = () => {
   if (!data) {
     return (
       <View style={loadStyles.loadingPage}>
-        <ActivityIndicator color={Colors[colorScheme].tint} size='large' />
+        <ActivityIndicator color={Colors[theme].tint} size='large' />
       </View>
     );
   }
@@ -109,7 +106,7 @@ const ExameFaixaDetalhes = () => {
     <ScrollView style={[styles.page, pageStyle]}>
       <Text style={[styles.title, { marginTop: 0 }]}>Uke (Defesa)</Text>
       {!data || !data.uke.length ? (
-        <ActivityIndicator size='large' color={Colors[colorScheme].text} />
+        <ActivityIndicator size='large' color={Colors[theme].text} />
       ) : (
         data.uke.map((item) => (
           <Text style={styles.data} key={item.nome}>
@@ -120,7 +117,7 @@ const ExameFaixaDetalhes = () => {
 
       <Text style={styles.title}>Tsuki (Soco)</Text>
       {!data || !data.tsuki.length ? (
-        <ActivityIndicator size='large' color={Colors[colorScheme].text} />
+        <ActivityIndicator size='large' color={Colors[theme].text} />
       ) : (
         data.tsuki.map((item) => (
           <Text style={styles.data} key={item.nome}>
@@ -131,7 +128,7 @@ const ExameFaixaDetalhes = () => {
 
       <Text style={styles.title}>Geri (Chute)</Text>
       {!data || !data.geri.length ? (
-        <ActivityIndicator size='large' color={Colors[colorScheme].text} />
+        <ActivityIndicator size='large' color={Colors[theme].text} />
       ) : (
         data.geri.map((item) => (
           <Text style={styles.data} key={item.nome}>
@@ -142,7 +139,7 @@ const ExameFaixaDetalhes = () => {
 
       <Text style={styles.title}>Katas</Text>
       {!data || !data.kata.length ? (
-        <ActivityIndicator size='large' color={Colors[colorScheme].text} />
+        <ActivityIndicator size='large' color={Colors[theme].text} />
       ) : (
         data.kata.map((item) => (
           <Text style={styles.data} key={item}>
