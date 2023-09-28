@@ -1,3 +1,4 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { child, push, ref, set } from 'firebase/database';
 import React, { useState } from 'react';
 import { Button, StyleSheet, TextInput, useColorScheme } from 'react-native';
@@ -6,6 +7,7 @@ import Colors from '../../constants/Colors';
 import { firebaseDatabase } from '../../utils/firebaseConfig';
 import { youtubeParser } from '../../utils/General';
 import { Text, View } from '../Themed';
+import ModalDeleteItem from './ModalDeleteItem';
 
 interface NewKataCardProps {
   nome: string;
@@ -20,6 +22,7 @@ const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video, kyu, uuid }) => 
   const [name, setName] = useState(nome);
   const [ytVideoID, setYtVideoID] = useState(youtubeParser(video));
   const [isEditing, setIsEditing] = useState(false);
+  const [isModalDeleteVisible, setIsModalDeleteVisible] = useState(false);
 
   const saveItem = () => {
     const dbRef = ref(firebaseDatabase);
@@ -68,6 +71,28 @@ const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video, kyu, uuid }) => 
       </View>
 
       {isEditing ? <Button title='Confirmar' onPress={saveItem} /> : <></>}
+
+      {uuid ? (
+        <>
+          <MaterialCommunityIcons
+            onPress={() => setIsModalDeleteVisible(true)}
+            color='red'
+            size={24}
+            name='trash-can-outline'
+            style={styles.deleteButton}
+          />
+
+          <ModalDeleteItem
+            kyu={kyu}
+            uuid={uuid}
+            isVisible={isModalDeleteVisible}
+            setIsVisible={setIsModalDeleteVisible}
+            name={name}
+          />
+        </>
+      ) : (
+        <></>
+      )}
     </View>
   );
 };
@@ -93,5 +118,10 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     marginBottom: 24,
+  },
+
+  deleteButton: {
+    position: 'absolute',
+    right: 10,
   },
 });
