@@ -8,7 +8,7 @@ import { firebaseDatabase } from '../../utils/firebaseConfig';
 interface ModalDeleteItemProps {
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
   isVisible: boolean;
-  kyu: string;
+  kyu: number;
   name: string;
   uuid: string;
 }
