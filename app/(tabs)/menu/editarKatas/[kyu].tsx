@@ -1,11 +1,11 @@
 import { useLocalSearchParams, useNavigation } from 'expo-router';
-import { child, get, ref } from 'firebase/database';
-import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, StyleSheet, useColorScheme } from 'react-native';
+import { child, onValue, push, ref, set } from 'firebase/database';
+import React, { useEffect, useRef, useState } from 'react';
+import { ActivityIndicator, Button, FlatList, StyleSheet, useColorScheme } from 'react-native';
 
 import KyusList from '../../../../assets/data/kyus.json';
 import NewKataCard from '../../../../components/editarKatas/NewKataCard';
-import { SafeAreaView } from '../../../../components/Themed';
+import { SafeAreaView, View } from '../../../../components/Themed';
 import Colors from '../../../../constants/Colors';
 import { KataVideoProps } from '../../../../interfaces/KatasProps';
 import { getContrastingTextColor } from '../../../../utils/Colors';
@@ -16,11 +16,14 @@ const ScreenEditKyu = () => {
   const theme = useColorScheme() ?? 'light';
   const { kyu } = useLocalSearchParams<{ kyu: string }>();
 
+  const scrollRef = useRef<FlatList>(null);
+
   const [videos, setVideos] = useState<KataVideoProps[]>([]);
 
   useEffect(() => {
-    const dbRef = ref(firebaseDatabase);
-    get(child(dbRef, 'katas/' + kyu)).then((snapshot) => {
+    const dbRef = ref(firebaseDatabase, 'katas/' + kyu);
+
+    onValue(dbRef, (snapshot) => {
       if (snapshot.exists()) {
         const videos: KataVideoProps[] = [];
 
@@ -45,6 +48,23 @@ const ScreenEditKyu = () => {
     });
   }, []);
 
+  const addItem = () => {
+    const dbRef = ref(firebaseDatabase);
+
+    const kataKey = 'katas/' + kyu;
+
+    const kataId = push(child(dbRef, kataKey)).key;
+
+    set(ref(firebaseDatabase, `${kataKey}/${kataId}`), {
+      nome: '',
+      video: 'https://www.youtube.com/embed/',
+    });
+
+    if (scrollRef.current) {
+      scrollRef.current.scrollToEnd();
+    }
+  };
+
   return (
     <SafeAreaView style={styles.page}>
       <FlatList
@@ -53,7 +73,12 @@ const ScreenEditKyu = () => {
         keyExtractor={(item, index) => `${item.nome}_${index}`}
         style={styles.container}
         ListEmptyComponent={<ActivityIndicator style={styles.load} size='large' color={Colors[theme].text} />}
+        ref={scrollRef}
       />
+
+      <View style={styles.buttonContainer}>
+        <Button title='Adicionar' onPress={addItem} />
+      </View>
     </SafeAreaView>
   );
 };
@@ -71,5 +96,9 @@ const styles = StyleSheet.create({
   },
   load: {
     marginVertical: '50%',
+  },
+
+  buttonContainer: {
+    padding: 8,
   },
 });
