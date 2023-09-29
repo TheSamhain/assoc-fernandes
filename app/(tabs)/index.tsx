@@ -2,8 +2,8 @@ import { StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import Eventos from '../../assets/data/eventos.json';
-import { View } from '../../components/Themed';
 import CardEvento from '../../components/eventos/CardEvento';
+import { View } from '../../components/Themed';
 
 export default function TabHomeScreen() {
   return (

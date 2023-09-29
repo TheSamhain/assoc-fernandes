@@ -1,10 +1,11 @@
-import { child, get, ref } from 'firebase/database';
+import { child, get, onValue, ref } from 'firebase/database';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, SafeAreaView, StyleSheet, useColorScheme } from 'react-native';
 
 import Kyus from '../../assets/data/kyus.json';
-import FaixaGroup from '../../components/katas/FaixaGroup';
+import KataVideo from '../../components/katas/KataVideo';
 import Colors from '../../constants/Colors';
+import { KEY_KATAS } from '../../constants/Database';
 import { FaixaGroupProps } from '../../interfaces/FaixaGroupProps';
 import { KataVideoProps } from '../../interfaces/KatasProps';
 import { firebaseDatabase } from '../../utils/firebaseConfig';
@@ -13,9 +14,31 @@ export default function TabKataScreen() {
   const theme = useColorScheme() ?? 'light';
   const [katasFaixas, setKatasFaixas] = useState<FaixaGroupProps[]>([]);
 
+  const [videos, setVideos] = useState<KataVideoProps[]>([]);
+
+  useEffect(() => {
+    const dbRef = ref(firebaseDatabase, KEY_KATAS);
+
+    onValue(dbRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const videos: KataVideoProps[] = [];
+
+        snapshot.forEach((item) => {
+          const video = item.val();
+          videos.push({ ...video, uuid: item.key });
+        });
+
+        setVideos(videos);
+      } else {
+        setVideos([]);
+      }
+    });
+  }, []);
+
   useEffect(() => {
     const dbRef = ref(firebaseDatabase);
-    get(child(dbRef, 'katas')).then((snapshot) => {
+
+    get(child(dbRef, KEY_KATAS)).then((snapshot) => {
       if (snapshot.exists()) {
         const katasParsed: FaixaGroupProps[] = [];
 
@@ -50,9 +73,9 @@ export default function TabKataScreen() {
   return (
     <SafeAreaView style={styles.page}>
       <FlatList
-        data={katasFaixas}
-        renderItem={({ item }) => <FaixaGroup {...item} />}
-        keyExtractor={(item, index) => `${item.kyu}_${index}`}
+        data={videos}
+        renderItem={({ item }) => <KataVideo {...item} />}
+        keyExtractor={(item, index) => `${item.uuid}_${index}`}
         style={styles.container}
         ListEmptyComponent={<ActivityIndicator style={styles.load} size='large' color={Colors[theme].text} />}
       />

@@ -1,27 +1,23 @@
-import { useLocalSearchParams, useNavigation } from 'expo-router';
 import { child, onValue, push, ref, set } from 'firebase/database';
 import React, { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, Button, FlatList, StyleSheet, useColorScheme } from 'react-native';
+import { ActivityIndicator, Button, FlatList, StyleSheet, useColorScheme, View } from 'react-native';
 
-import KyusList from '../../../../assets/data/kyus.json';
-import NewKataCard from '../../../../components/editarKatas/NewKataCard';
-import { SafeAreaView, View } from '../../../../components/Themed';
-import Colors from '../../../../constants/Colors';
-import { KataVideoProps } from '../../../../interfaces/KatasProps';
-import { getContrastingTextColor } from '../../../../utils/Colors';
-import { firebaseDatabase } from '../../../../utils/firebaseConfig';
+import NewKataCard from '../../../components/editarKatas/NewKataCard';
+import { SafeAreaView } from '../../../components/Themed';
+import Colors from '../../../constants/Colors';
+import { KEY_KATAS } from '../../../constants/Database';
+import { KataVideoProps } from '../../../interfaces/KatasProps';
+import { firebaseDatabase } from '../../../utils/firebaseConfig';
 
-const ScreenEditKyu = () => {
-  const navigation = useNavigation();
+const ScreenEditarKatas = () => {
   const theme = useColorScheme() ?? 'light';
-  const { kyu } = useLocalSearchParams<{ kyu: string }>();
 
   const scrollRef = useRef<FlatList>(null);
 
   const [videos, setVideos] = useState<KataVideoProps[]>([]);
 
   useEffect(() => {
-    const dbRef = ref(firebaseDatabase, 'katas/' + kyu);
+    const dbRef = ref(firebaseDatabase, KEY_KATAS);
 
     onValue(dbRef, (snapshot) => {
       if (snapshot.exists()) {
@@ -33,29 +29,18 @@ const ScreenEditKyu = () => {
         });
 
         setVideos(videos);
+      } else {
+        setVideos([]);
       }
-    });
-
-    const itemKyu = KyusList.find((item) => item.kyu === Number(kyu));
-
-    const title = itemKyu ? 'Editar Katas - ' + itemKyu.faixa : 'Editar faixa';
-    const cor = itemKyu ? itemKyu.cor : '#000000';
-
-    navigation.setOptions({
-      title,
-      headerTintColor: getContrastingTextColor(cor),
-      headerStyle: { backgroundColor: cor },
     });
   }, []);
 
   const addItem = () => {
     const dbRef = ref(firebaseDatabase);
 
-    const kataKey = 'katas/' + kyu;
+    const kataId = push(child(dbRef, KEY_KATAS)).key;
 
-    const kataId = push(child(dbRef, kataKey)).key;
-
-    set(ref(firebaseDatabase, `${kataKey}/${kataId}`), {
+    set(ref(firebaseDatabase, `${KEY_KATAS}/${kataId}`), {
       nome: '',
       video: 'https://www.youtube.com/embed/',
     });
@@ -69,7 +54,7 @@ const ScreenEditKyu = () => {
     <SafeAreaView style={styles.page}>
       <FlatList
         data={videos}
-        renderItem={({ item, index }) => <NewKataCard kyu={Number(kyu)} {...item} />}
+        renderItem={({ item, index }) => <NewKataCard {...item} />}
         keyExtractor={(item, index) => `${item.nome}_${index}`}
         style={styles.container}
         ListEmptyComponent={<ActivityIndicator style={styles.load} size='large' color={Colors[theme].text} />}
@@ -83,7 +68,7 @@ const ScreenEditKyu = () => {
   );
 };
 
-export default ScreenEditKyu;
+export default ScreenEditarKatas;
 
 const styles = StyleSheet.create({
   page: {
@@ -94,6 +79,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
   },
+
   load: {
     marginVertical: '50%',
   },

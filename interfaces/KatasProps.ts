@@ -1,5 +1,5 @@
 export interface KataVideoProps {
-  uuid?: string;
+  uuid: string;
   nome: string;
   video: string;
 }

@@ -14,12 +14,17 @@ const ScreenMenu = () => {
   const [userAuth, setUserAuth] = useState('');
   const [newPass, setNewPass] = useState('');
 
-  if (userAuth !== 'afk#123') {
+  if (userAuth.toUpperCase() !== 'AFK#123') {
     return (
       <SafeAreaView style={[styles.page, stylesModal.background]}>
         <View style={[stylesModal.container, { backgroundColor: Colors[theme].text }]}>
           <Text style={[stylesModal.title, { color: Colors[theme].background }]}>Senha de Administrador</Text>
-          <TextInput value={newPass} onChangeText={(text) => setNewPass(text)} style={stylesModal.input} autoFocus />
+          <TextInput
+            value={newPass}
+            onChangeText={(text) => setNewPass(text.toUpperCase())}
+            style={stylesModal.input}
+            autoFocus
+          />
           <Button title='Confirmar' onPress={() => setUserAuth(newPass)} />
 
           {userAuth ? <Text style={stylesModal.errorMessage}>Senha inválida</Text> : <></>}

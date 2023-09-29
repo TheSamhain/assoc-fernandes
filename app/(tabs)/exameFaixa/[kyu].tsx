@@ -6,6 +6,7 @@ import { ActivityIndicator, ScrollView, StyleSheet, useColorScheme, ViewStyle } 
 import Kyus from '../../../assets/data/kyus.json';
 import { Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
+import { KEY_EXAME } from '../../../constants/Database';
 import { ExameData } from '../../../interfaces/ExameData';
 import { getContrastingTextColor } from '../../../utils/Colors';
 import { firebaseDatabase } from '../../../utils/firebaseConfig';
@@ -24,7 +25,7 @@ const ExameFaixaDetalhes = () => {
 
   useEffect(() => {
     const dbRef = ref(firebaseDatabase);
-    get(child(dbRef, 'exame')).then((snapshot) => {
+    get(child(dbRef, KEY_EXAME)).then((snapshot) => {
       if (snapshot.exists()) {
         const exameDB = snapshot.val();
 

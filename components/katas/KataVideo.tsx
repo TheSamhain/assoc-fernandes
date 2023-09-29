@@ -1,36 +1,29 @@
 import { DarkTheme } from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, Platform } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { WebView } from 'react-native-web-webview';
 
 import { Text, View } from '../Themed';
 
 interface KataVideoProps {
-  kata: {
-    nome: string;
-    video: string;
-  };
-  cor: string;
+  nome: string;
+  video: string;
+  uuid: string;
 }
 
-const KataVideo: React.FC<KataVideoProps> = ({ kata, cor }) => {
+const KataVideo: React.FC<KataVideoProps> = ({ nome, video, uuid }) => {
   return (
-    <View
-      style={{
-        ...styles.videoContainer,
-        borderColor: cor,
-      }}
-    >
+    <View style={styles.videoContainer}>
       {Platform.OS === 'web' ? (
         <WebView
           style={{ flex: 1 }}
           javaScriptEnabled
-          source={{ uri: kata.video + '?rel=0&autoplay=0&showinfo=0&controls=1' }}
+          source={{ uri: video + '?rel=0&autoplay=0&showinfo=0&controls=1' }}
         />
       ) : (
         <></>
       )}
-      <Text style={styles.title}>{kata.nome}</Text>
+      <Text style={styles.title}>{nome}</Text>
     </View>
   );
 };
@@ -39,12 +32,12 @@ export default KataVideo;
 
 const styles = StyleSheet.create({
   videoContainer: {
-    backgroundColor: '#000000',
+    padding: 3,
     marginVertical: 16,
-    position: 'relative',
     alignItems: 'center',
     borderWidth: 3,
     borderRadius: 8,
+    borderColor: '#7c7c7d',
     height: 300,
     width: 500,
     maxWidth: '100%',
@@ -54,8 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
     width: '100%',
     textAlign: 'center',
-    height: 40,
-    paddingTop: 5,
+    paddingBottom: 5,
     fontSize: 20,
   },
 });

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, TextInput, useColorScheme } from 'react-native';
 
 import Colors from '../../constants/Colors';
+import { KEY_KATAS } from '../../constants/Database';
 import { firebaseDatabase } from '../../utils/firebaseConfig';
 import { youtubeParser } from '../../utils/General';
 import { Text, View } from '../Themed';
@@ -13,25 +14,22 @@ interface NewKataCardProps {
   nome: string;
   video: string;
   uuid?: string;
-  kyu: number;
 }
 
-const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video, kyu, uuid }) => {
+const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video, uuid }) => {
   const theme = useColorScheme() ?? 'light';
 
   const [name, setName] = useState(nome);
-  const [ytVideoID, setYtVideoID] = useState(youtubeParser(video));
+  const [ytVideoID, setYtVideoID] = useState(video ? youtubeParser(video) : '');
   const [isEditing, setIsEditing] = useState(false);
   const [isModalDeleteVisible, setIsModalDeleteVisible] = useState(false);
 
   const saveItem = () => {
     const dbRef = ref(firebaseDatabase);
 
-    const kataKey = 'katas/' + kyu;
+    const kataId = uuid || push(child(dbRef, KEY_KATAS)).key;
 
-    const kataId = uuid || push(child(dbRef, kataKey)).key;
-
-    set(ref(firebaseDatabase, `${kataKey}/${kataId}`), {
+    set(ref(firebaseDatabase, `${KEY_KATAS}/${kataId}`), {
       nome: name,
       video: 'https://www.youtube.com/embed/' + ytVideoID,
     });
@@ -83,7 +81,6 @@ const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video, kyu, uuid }) => 
           />
 
           <ModalDeleteItem
-            kyu={kyu}
             uuid={uuid}
             isVisible={isModalDeleteVisible}
             setIsVisible={setIsModalDeleteVisible}

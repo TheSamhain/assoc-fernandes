@@ -3,19 +3,19 @@ import React from 'react';
 import { Button, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import Colors from '../../constants/Colors';
+import { KEY_KATAS } from '../../constants/Database';
 import { firebaseDatabase } from '../../utils/firebaseConfig';
 
 interface ModalDeleteItemProps {
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
   isVisible: boolean;
-  kyu: number;
   name: string;
   uuid: string;
 }
 
-const ModalDeleteItem: React.FC<ModalDeleteItemProps> = ({ uuid, kyu, name, setIsVisible, isVisible }) => {
+const ModalDeleteItem: React.FC<ModalDeleteItemProps> = ({ uuid, name, setIsVisible, isVisible }) => {
   const deletItem = () => {
-    const dbRef = ref(firebaseDatabase, `katas/${kyu}/${uuid}`);
+    const dbRef = ref(firebaseDatabase, `${KEY_KATAS}/${uuid}`);
     remove(dbRef);
     setIsVisible(false);
   };
