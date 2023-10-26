@@ -5,8 +5,8 @@ import { Button, StyleSheet, TextInput, useColorScheme } from 'react-native';
 
 import Colors from '../../constants/Colors';
 import { KEY_KATAS } from '../../constants/Database';
-import { firebaseDatabase } from '../../utils/firebaseConfig';
 import { youtubeParser } from '../../utils/General';
+import { firebaseDatabase } from '../../utils/firebaseConfig';
 import { Text, View } from '../Themed';
 import ModalDeleteItem from './ModalDeleteItem';
 

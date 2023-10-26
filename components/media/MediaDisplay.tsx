@@ -1,4 +1,4 @@
-import { Video, ResizeMode } from 'expo-av';
+import { ResizeMode, Video } from 'expo-av';
 import { Image } from 'expo-image';
 import React from 'react';
 import { StyleSheet } from 'react-native';

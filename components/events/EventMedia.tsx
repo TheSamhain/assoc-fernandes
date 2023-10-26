@@ -6,14 +6,14 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { blurHash } from '../../constants/General';
 import { Text, View } from '../Themed';
 
-interface MediaEventoProps {
+interface EventMediaProps {
   galery: string;
   media: string | undefined;
   index: number;
   plusItems?: number;
 }
 
-const MediaEvento: React.FC<MediaEventoProps> = ({ galery, media, index, plusItems }) => {
+const EventMedia: React.FC<EventMediaProps> = ({ galery, media, index, plusItems }) => {
   const router = useRouter();
 
   return (
@@ -44,7 +44,7 @@ const MediaEvento: React.FC<MediaEventoProps> = ({ galery, media, index, plusIte
   );
 };
 
-export default MediaEvento;
+export default EventMedia;
 
 const styles = StyleSheet.create({
   media: {

@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import Eventos from '../../assets/data/eventos.json';
-import CardEvento from '../../components/eventos/CardEvento';
+import EventCard from '../../components/events/EventCard';
 import { View } from '../../components/Themed';
 
 export default function TabHomeScreen() {
@@ -10,7 +10,7 @@ export default function TabHomeScreen() {
     <View style={styles.page}>
       <ScrollView style={styles.container}>
         {Eventos.map((evento) => (
-          <CardEvento key={evento.nome + evento.data} evento={evento} />
+          <EventCard key={evento.nome + evento.data} evento={evento} />
         ))}
       </ScrollView>
     </View>

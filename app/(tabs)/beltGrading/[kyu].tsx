@@ -11,7 +11,7 @@ import { ExameData } from '../../../interfaces/ExameData';
 import { getContrastingTextColor } from '../../../utils/Colors';
 import { firebaseDatabase } from '../../../utils/firebaseConfig';
 
-const ExameFaixaDetalhes = () => {
+const BeltGradingDetails = () => {
   const theme = useColorScheme() ?? 'light';
   const navigation = useNavigation();
 
@@ -165,7 +165,7 @@ const ExameFaixaDetalhes = () => {
   );
 };
 
-export default ExameFaixaDetalhes;
+export default BeltGradingDetails;
 
 const styles = StyleSheet.create({
   page: {

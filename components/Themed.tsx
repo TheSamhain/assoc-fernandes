@@ -4,10 +4,10 @@
  */
 
 import {
+  SafeAreaView as DefaultSafeArea,
   Text as DefaultText,
   useColorScheme,
   View as DefaultView,
-  SafeAreaView as DefaultSafeArea,
 } from 'react-native';
 
 import Colors from '../constants/Colors';

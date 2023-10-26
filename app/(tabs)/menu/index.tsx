@@ -1,14 +1,12 @@
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { Button, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
+import { Button, StyleSheet, useColorScheme } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 
+import MenuItem from '../../../components/menu/MenuItem';
 import { SafeAreaView, Text, View } from '../../../components/Themed';
 import Colors from '../../../constants/Colors';
 
 const ScreenMenu = () => {
-  const router = useRouter();
   const theme = useColorScheme() ?? 'light';
 
   const [userAuth, setUserAuth] = useState('');
@@ -35,10 +33,7 @@ const ScreenMenu = () => {
 
   return (
     <SafeAreaView style={styles.page}>
-      <TouchableOpacity style={styles.item} onPress={() => router.push({ pathname: 'menu/editarKatas' })}>
-        <MaterialCommunityIcons size={28} name='karate' color={Colors[theme].text} />
-        <Text style={styles.itemText}>Editar Katas</Text>
-      </TouchableOpacity>
+      <MenuItem title='Editar Katas' route='editKatas' icon='karate' />
     </SafeAreaView>
   );
 };
@@ -48,16 +43,6 @@ export default ScreenMenu;
 const styles = StyleSheet.create({
   page: {
     flex: 1,
-  },
-
-  item: {
-    margin: 16,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  itemText: {
-    marginLeft: 8,
-    fontSize: 16,
   },
 });
 

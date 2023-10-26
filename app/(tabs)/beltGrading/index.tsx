@@ -1,11 +1,11 @@
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import React from 'react';
-import { ScrollView, StyleSheet, ViewStyle, useColorScheme } from 'react-native';
+import { ScrollView, StyleSheet, useColorScheme, ViewStyle } from 'react-native';
 
 import Kyus from '../../../assets/data/kyus.json';
-import ItemExameFaixa from '../../../components/exameFaixa/ItemExameFaixa';
+import BeltGradingItem from '../../../components/beltGrading/BeltGradingItem';
 
-const TabExameFaixa = () => {
+const TabBeltGrading = () => {
   const colorScheme = useColorScheme() ?? 'light';
 
   const pageStyle: ViewStyle = {
@@ -15,13 +15,13 @@ const TabExameFaixa = () => {
   return (
     <ScrollView style={[styles.page, pageStyle]} contentContainerStyle={styles.container}>
       {Kyus.map((kyu) => (
-        <ItemExameFaixa {...kyu} key={kyu.kyu} />
+        <BeltGradingItem {...kyu} key={kyu.kyu} />
       ))}
     </ScrollView>
   );
 };
 
-export default TabExameFaixa;
+export default TabBeltGrading;
 
 const styles = StyleSheet.create({
   page: {

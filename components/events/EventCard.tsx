@@ -1,11 +1,11 @@
-import { listAll, ref, getDownloadURL } from 'firebase/storage';
+import { getDownloadURL, listAll, ref } from 'firebase/storage';
 import React, { useEffect, useState } from 'react';
-import { Dimensions, StyleSheet, ViewStyle, useColorScheme } from 'react-native';
+import { Dimensions, StyleSheet, useColorScheme, ViewStyle } from 'react-native';
 
-import MediaEvento from './MediaEvento';
 import Colors from '../../constants/Colors';
 import { firebaseStorage } from '../../utils/firebaseConfig';
 import { Text, View } from '../Themed';
+import EventMedia from './EventMedia';
 
 interface EventoProps {
   data: string;
@@ -15,11 +15,11 @@ interface EventoProps {
   nome: string;
 }
 
-interface CardEventoProps {
+interface EventCardProps {
   evento: EventoProps;
 }
 
-const CardEvento: React.FC<CardEventoProps> = ({ evento }) => {
+const EventCard: React.FC<EventCardProps> = ({ evento }) => {
   const [plusMedias, setPlusMedias] = useState(0);
   const [medias, setMedias] = useState<(string | undefined)[]>([undefined, undefined, undefined, undefined]);
   const theme = useColorScheme() ?? 'light';
@@ -66,7 +66,7 @@ const CardEvento: React.FC<CardEventoProps> = ({ evento }) => {
 
       <View style={styles.medias}>
         {medias.map((media, index) => (
-          <MediaEvento
+          <EventMedia
             galery={evento.galeria}
             plusItems={plusMedias}
             key={evento.galeria + (media || '') + index}
@@ -79,7 +79,7 @@ const CardEvento: React.FC<CardEventoProps> = ({ evento }) => {
   );
 };
 
-export default CardEvento;
+export default EventCard;
 
 const styles = StyleSheet.create({
   card: {

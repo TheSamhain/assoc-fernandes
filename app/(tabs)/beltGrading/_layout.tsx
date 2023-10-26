@@ -3,7 +3,7 @@ import React from 'react';
 
 import Logo from '../../../components/Logo';
 
-const ExameFaixaLayout = () => {
+const BeltGradingLayout = () => {
   return (
     <Stack screenOptions={{ headerRight: () => <Logo /> }}>
       <Stack.Screen name='index' options={{ title: 'Exame de faixa' }} />
@@ -21,4 +21,4 @@ const ExameFaixaLayout = () => {
   );
 };
 
-export default ExameFaixaLayout;
+export default BeltGradingLayout;

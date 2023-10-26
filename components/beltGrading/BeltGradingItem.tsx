@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
-import { StyleSheet, ViewStyle, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
 
 import { KyuProps } from '../../interfaces/KyuProps';
 import { getContrastingTextColor } from '../../utils/Colors';
@@ -25,7 +25,7 @@ const kyuIcons: KyuIconsProps = {
   '-1': 'school',
 };
 
-const ItemExameFaixa: React.FC<KyuProps> = ({ kyu, faixa, cor, pontaPreta }) => {
+const BeltGradingItem: React.FC<KyuProps> = ({ kyu, faixa, cor, pontaPreta }) => {
   const router = useRouter();
 
   const containerStyle: ViewStyle = {
@@ -55,7 +55,7 @@ const ItemExameFaixa: React.FC<KyuProps> = ({ kyu, faixa, cor, pontaPreta }) => 
   );
 };
 
-export default ItemExameFaixa;
+export default BeltGradingItem;
 
 const styles = StyleSheet.create({
   item: {
