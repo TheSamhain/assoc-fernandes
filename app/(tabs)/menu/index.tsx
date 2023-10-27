@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, useColorScheme } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 
-import MenuItem from '../../../components/menu/MenuItem';
 import { SafeAreaView, Text, View } from '../../../components/Themed';
+import MenuItem from '../../../components/menu/MenuItem';
 import Colors from '../../../constants/Colors';
 
 const ScreenMenu = () => {
@@ -34,6 +34,7 @@ const ScreenMenu = () => {
   return (
     <SafeAreaView style={styles.page}>
       <MenuItem title='Editar Katas' route='editKatas' icon='karate' />
+      <MenuItem title='Nova publicação' route='newPost' icon='image-plus' />
     </SafeAreaView>
   );
 };

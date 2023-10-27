@@ -2,8 +2,8 @@ import { child, onValue, push, ref, set } from 'firebase/database';
 import React, { useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Button, FlatList, StyleSheet, useColorScheme, View } from 'react-native';
 
-import NewKataCard from '../../../components/editKatas/NewKataCard';
 import { SafeAreaView } from '../../../components/Themed';
+import NewKataCard from '../../../components/editKatas/NewKataCard';
 import Colors from '../../../constants/Colors';
 import { KEY_KATAS } from '../../../constants/Database';
 import { KataVideoProps } from '../../../interfaces/KatasProps';

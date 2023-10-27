@@ -1,14 +1,15 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import axios from 'axios';
 import { child, push, ref, set } from 'firebase/database';
-import React, { useState } from 'react';
-import { Button, StyleSheet, TextInput, useColorScheme } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, Button, StyleSheet, TextInput, useColorScheme } from 'react-native';
 
+import ModalDeleteItem from './ModalDeleteItem';
 import Colors from '../../constants/Colors';
 import { KEY_KATAS } from '../../constants/Database';
-import { youtubeParser } from '../../utils/General';
 import { firebaseDatabase } from '../../utils/firebaseConfig';
+import { youtubeParser } from '../../utils/General';
 import { Text, View } from '../Themed';
-import ModalDeleteItem from './ModalDeleteItem';
 
 interface NewKataCardProps {
   nome: string;
@@ -23,6 +24,7 @@ const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video, uuid }) => {
   const [ytVideoID, setYtVideoID] = useState(video ? youtubeParser(video) : '');
   const [isEditing, setIsEditing] = useState(false);
   const [isModalDeleteVisible, setIsModalDeleteVisible] = useState(false);
+  const [videoName, setVideoName] = useState('');
 
   const saveItem = () => {
     const dbRef = ref(firebaseDatabase);
@@ -36,6 +38,34 @@ const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video, uuid }) => {
 
     setIsEditing(false);
   };
+
+  useEffect(() => {
+    const loadVideoName = async () => {
+      try {
+        const response = await axios.get(
+          `https://noembed.com/embed?dataType=json&url=https://www.youtube.com/watch?v=${ytVideoID}`,
+        );
+
+        const { data } = response;
+
+        if (!data) {
+          return;
+        }
+
+        const { title } = data;
+
+        if (!title) {
+          return setVideoName('ID inválido');
+        }
+
+        setVideoName(title);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    loadVideoName();
+  }, [ytVideoID]);
 
   const color = Colors[theme].background;
   const backgroundColor = Colors[theme].text;
@@ -66,6 +96,12 @@ const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video, uuid }) => {
             setIsEditing(true);
           }}
         />
+
+        {ytVideoID && videoName ? (
+          <Text style={[styles.videoName, { color }]}>{videoName}</Text>
+        ) : (
+          <ActivityIndicator color={color} />
+        )}
       </View>
 
       {isEditing ? <Button title='Confirmar' onPress={saveItem} /> : <></>}
@@ -99,22 +135,27 @@ export default NewKataCard;
 const styles = StyleSheet.create({
   container: {
     padding: 16,
-    marginBottom: 8,
+    margin: 16,
     width: 500,
     maxWidth: '90%',
-    margin: 8,
     borderRadius: 8,
     alignSelf: 'center',
   },
   label: {
     marginBottom: 8,
+    fontSize: 16,
   },
   input: {
     marginLeft: 10,
     borderBottomWidth: 1,
+    fontSize: 16,
   },
   inputContainer: {
     marginBottom: 24,
+  },
+  videoName: {
+    marginVertical: 8,
+    marginLeft: 10,
   },
 
   deleteButton: {
