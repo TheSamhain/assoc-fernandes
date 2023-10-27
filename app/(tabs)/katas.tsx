@@ -28,7 +28,10 @@ export default function TabKataScreen() {
           videos.push({ ...video, uuid: item.key });
         });
 
-        setVideos(videos);
+        const videosFiltered = videos.filter(
+          (video) => video.nome.trim() && video.video.replace('https://www.youtube.com/embed/', ''),
+        );
+        setVideos(videosFiltered);
       } else {
         setVideos([]);
       }

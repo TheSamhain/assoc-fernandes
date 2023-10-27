@@ -4,12 +4,12 @@ import { child, push, ref, set } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Button, StyleSheet, TextInput, useColorScheme } from 'react-native';
 
-import ModalDeleteItem from './ModalDeleteItem';
 import Colors from '../../constants/Colors';
 import { KEY_KATAS } from '../../constants/Database';
 import { firebaseDatabase } from '../../utils/firebaseConfig';
 import { youtubeParser } from '../../utils/General';
 import { Text, View } from '../Themed';
+import ModalDeleteItem from './ModalDeleteItem';
 
 interface NewKataCardProps {
   nome: string;
@@ -97,7 +97,9 @@ const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video, uuid }) => {
           }}
         />
 
-        {ytVideoID && videoName ? (
+        {!ytVideoID ? (
+          <></>
+        ) : videoName ? (
           <Text style={[styles.videoName, { color }]}>{videoName}</Text>
         ) : (
           <ActivityIndicator color={color} />
