@@ -39,7 +39,7 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name='beltGrading'
+        name='exameFaixa'
         options={{
           title: 'Exame faixa',
           tabBarIcon: ({ color }) => <TabBarIcon name='chevron-triple-up' color={color} />,
