@@ -33,8 +33,8 @@ const ScreenMenu = () => {
 
   return (
     <SafeAreaView style={styles.page}>
-      <MenuItem title='Editar Katas' route='editKatas' icon='karate' />
-      <MenuItem title='Nova publicação' route='newPost' icon='image-plus' />
+      <MenuItem title='Editar Katas' route='editarKatas' icon='karate' />
+      <MenuItem title='Nova publicação' route='novoPost' icon='image-plus' />
     </SafeAreaView>
   );
 };

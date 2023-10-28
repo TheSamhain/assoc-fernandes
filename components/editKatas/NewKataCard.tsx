@@ -4,12 +4,13 @@ import { child, push, ref, set } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Button, StyleSheet, TextInput, useColorScheme } from 'react-native';
 
+import ModalDeleteItem from './ModalDeleteItem';
 import Colors from '../../constants/Colors';
 import { KEY_KATAS } from '../../constants/Database';
-import { firebaseDatabase } from '../../utils/firebaseConfig';
 import { youtubeParser } from '../../utils/General';
+import { firebaseDatabase } from '../../utils/firebaseConfig';
+import CustomInput from '../CustomInput';
 import { Text, View } from '../Themed';
-import ModalDeleteItem from './ModalDeleteItem';
 
 interface NewKataCardProps {
   nome: string;
@@ -72,41 +73,34 @@ const NewKataCard: React.FC<NewKataCardProps> = ({ nome, video, uuid }) => {
 
   return (
     <View style={[styles.container, { backgroundColor }]}>
-      <View style={[styles.inputContainer, { backgroundColor }]}>
-        <Text style={[styles.label, { color }]}>Nome</Text>
+      <CustomInput
+        label='Nome'
+        value={name}
+        onChangeText={(text) => {
+          setName(text);
+          setIsEditing(true);
+        }}
+        containerStyle={styles.inputContainer}
+      />
 
-        <TextInput
-          style={[styles.input, { color }]}
-          value={name}
-          onChangeText={(text) => {
-            setName(text);
-            setIsEditing(true);
-          }}
-        />
-      </View>
+      <CustomInput
+        label='ID Video Youtube'
+        value={ytVideoID}
+        onChangeText={(text) => {
+          setYtVideoID(youtubeParser(text) || text);
+          setIsEditing(true);
+        }}
+      />
 
-      <View style={[styles.inputContainer, { backgroundColor }]}>
-        <Text style={[styles.label, { color }]}>ID Video Youtube</Text>
+      {!ytVideoID ? (
+        <></>
+      ) : videoName ? (
+        <Text style={[styles.videoName, { color }]}>{videoName}</Text>
+      ) : (
+        <ActivityIndicator color={color} />
+      )}
 
-        <TextInput
-          style={[styles.input, { color }]}
-          value={ytVideoID}
-          onChangeText={(text) => {
-            setYtVideoID(youtubeParser(text) || text);
-            setIsEditing(true);
-          }}
-        />
-
-        {!ytVideoID ? (
-          <></>
-        ) : videoName ? (
-          <Text style={[styles.videoName, { color }]}>{videoName}</Text>
-        ) : (
-          <ActivityIndicator color={color} />
-        )}
-      </View>
-
-      {isEditing ? <Button title='Confirmar' onPress={saveItem} /> : <></>}
+      <View style={styles.buttonContainer}>{isEditing ? <Button title='Confirmar' onPress={saveItem} /> : <></>}</View>
 
       {uuid ? (
         <>
@@ -143,15 +137,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignSelf: 'center',
   },
-  label: {
-    marginBottom: 8,
-    fontSize: 16,
-  },
-  input: {
-    marginLeft: 10,
-    borderBottomWidth: 1,
-    fontSize: 16,
-  },
+
   inputContainer: {
     marginBottom: 24,
   },
@@ -163,5 +149,9 @@ const styles = StyleSheet.create({
   deleteButton: {
     position: 'absolute',
     right: 10,
+  },
+
+  buttonContainer: {
+    marginTop: 24,
   },
 });

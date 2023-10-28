@@ -1,14 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text } from 'react-native';
 
 const ScreenNewPost = () => {
   return (
-    <View>
+    <SafeAreaView style={styles.page}>
       <Text>ScreenNewPost</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
 export default ScreenNewPost;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+  },
+});

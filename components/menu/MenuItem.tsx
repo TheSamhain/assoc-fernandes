@@ -8,7 +8,7 @@ import { Text } from '../Themed';
 
 interface MenuItemProps {
   title: string;
-  route: 'editKatas' | 'newPost';
+  route: 'editarKatas' | 'novoPost';
   icon: React.ComponentProps<typeof MaterialCommunityIcons>['name'];
 }
 
