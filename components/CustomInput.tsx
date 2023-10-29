@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   input: {
-    marginLeft: 10,
+    marginHorizontal: 10,
     borderBottomWidth: 1,
     fontSize: 16,
   },

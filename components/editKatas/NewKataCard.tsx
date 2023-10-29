@@ -2,7 +2,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import axios from 'axios';
 import { child, push, ref, set } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Button, StyleSheet, TextInput, useColorScheme } from 'react-native';
+import { ActivityIndicator, Button, StyleSheet, useColorScheme } from 'react-native';
 
 import ModalDeleteItem from './ModalDeleteItem';
 import Colors from '../../constants/Colors';
