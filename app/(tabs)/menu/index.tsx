@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Buffer } from 'buffer';
+import React, { useEffect, useState } from 'react';
 import { Button, StyleSheet, useColorScheme } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 
@@ -6,13 +8,44 @@ import { SafeAreaView, Text, View } from '../../../components/Themed';
 import MenuItem from '../../../components/menu/MenuItem';
 import Colors from '../../../constants/Colors';
 
+const ENCODED_PASS = 'QUZLIzEyMw==';
+const DECODED_PASS = Buffer.from(ENCODED_PASS, 'base64').toString('utf8');
+const STORAGE_KEY_USER = 'AUTH_USER';
+
 const ScreenMenu = () => {
   const theme = useColorScheme() ?? 'light';
 
   const [userAuth, setUserAuth] = useState('');
   const [newPass, setNewPass] = useState('');
 
-  if (userAuth.toUpperCase() !== 'AFK#123') {
+  useEffect(() => {
+    const loadData = async () => {
+      const storedUser = await AsyncStorage.getItem(STORAGE_KEY_USER);
+      const timestamp = Number(storedUser);
+
+      if (!storedUser || !timestamp) {
+        return AsyncStorage.clear();
+      }
+
+      const currentTimestamp = new Date().getTime();
+
+      if (timestamp >= currentTimestamp) {
+        return AsyncStorage.clear();
+      }
+
+      setUserAuth(DECODED_PASS);
+    };
+
+    loadData();
+  }, []);
+
+  const handleConfirm = async () => {
+    setUserAuth(newPass);
+    const currentTimestamp = new Date().getTime();
+    AsyncStorage.setItem(STORAGE_KEY_USER, String(currentTimestamp));
+  };
+
+  if (userAuth.toUpperCase() !== DECODED_PASS) {
     return (
       <SafeAreaView style={[styles.page, stylesModal.background]}>
         <View style={[stylesModal.container, { backgroundColor: Colors[theme].text }]}>
@@ -23,7 +56,7 @@ const ScreenMenu = () => {
             style={stylesModal.input}
             autoFocus
           />
-          <Button title='Confirmar' onPress={() => setUserAuth(newPass)} />
+          <Button title='Confirmar' onPress={handleConfirm} />
 
           {userAuth ? <Text style={stylesModal.errorMessage}>Senha inválida</Text> : <></>}
         </View>
