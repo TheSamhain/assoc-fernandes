@@ -3,7 +3,7 @@ import { Button, SafeAreaView, StyleSheet, useColorScheme } from 'react-native';
 
 import CustomCheckBox from '../../../components/CustomCheckBox';
 import CustomInput from '../../../components/CustomInput';
-import { View } from '../../../components/Themed';
+import { Text, View } from '../../../components/Themed';
 import { Cities, City } from '../../../constants/Cities';
 import Colors from '../../../constants/Colors';
 
@@ -40,6 +40,10 @@ const ScreenNewPost = () => {
 
   const handlePublish = () => {};
 
+  if (!false) {
+    return <Text style={styles.developmentAlert}>Em desenvolvimento !</Text>;
+  }
+
   return (
     <SafeAreaView style={styles.page}>
       <View style={[styles.card, { backgroundColor }]}>
@@ -73,5 +77,12 @@ const styles = StyleSheet.create({
 
   citiesList: {
     marginVertical: 24,
+  },
+
+  developmentAlert: {
+    alignSelf: 'center',
+    textAlign: 'center',
+    fontSize: 24,
+    marginVertical: 'auto',
   },
 });

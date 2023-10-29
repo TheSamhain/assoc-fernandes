@@ -2,24 +2,13 @@ import { getDownloadURL, listAll, ref } from 'firebase/storage';
 import React, { useEffect, useState } from 'react';
 import { Dimensions, StyleSheet, useColorScheme, ViewStyle } from 'react-native';
 
+import EventMedia from './EventMedia';
 import Colors from '../../constants/Colors';
+import { EventoProps } from '../../interfaces/EventoProps';
 import { firebaseStorage } from '../../utils/firebaseConfig';
 import { Text, View } from '../Themed';
-import EventMedia from './EventMedia';
 
-interface EventoProps {
-  data: string;
-  descricao: string;
-  galeria: string;
-  local: string[];
-  nome: string;
-}
-
-interface EventCardProps {
-  evento: EventoProps;
-}
-
-const EventCard: React.FC<EventCardProps> = ({ evento }) => {
+const EventCard: React.FC<EventoProps> = ({ galeria, nome, data, descricao }) => {
   const [plusMedias, setPlusMedias] = useState(0);
   const [medias, setMedias] = useState<(string | undefined)[]>([undefined, undefined, undefined, undefined]);
   const theme = useColorScheme() ?? 'light';
@@ -37,7 +26,7 @@ const EventCard: React.FC<EventCardProps> = ({ evento }) => {
     const getMedias = async () => {
       setMedias([undefined, undefined, undefined, undefined]);
 
-      const imagesRef = ref(firebaseStorage, evento.galeria);
+      const imagesRef = ref(firebaseStorage, galeria);
       const listRef = await listAll(imagesRef);
       const { items } = listRef;
 
@@ -60,16 +49,16 @@ const EventCard: React.FC<EventCardProps> = ({ evento }) => {
 
   return (
     <View style={[styles.card, background]}>
-      <Text style={styles.title}>{evento.nome}</Text>
-      <Text style={styles.description}>{evento.descricao}</Text>
-      <Text style={styles.description}>{evento.data}</Text>
+      <Text style={styles.title}>{nome}</Text>
+      <Text style={styles.description}>{descricao}</Text>
+      <Text style={styles.description}>{data}</Text>
 
       <View style={styles.medias}>
         {medias.map((media, index) => (
           <EventMedia
-            galery={evento.galeria}
+            galery={galeria}
             plusItems={plusMedias}
-            key={evento.galeria + (media || '') + index}
+            key={galeria + (media || '') + index}
             media={media}
             index={index}
           />
