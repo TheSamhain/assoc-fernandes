@@ -1,20 +1,11 @@
 import { Image } from 'expo-image';
 import * as ImagePicker from 'expo-image-picker';
 import React, { useState } from 'react';
-import {
-  Alert,
-  Button,
-  SafeAreaView,
-  ScrollView,
-  ScrollViewBase,
-  StyleSheet,
-  Touchable,
-  TouchableOpacity,
-  useColorScheme,
-} from 'react-native';
+import { Alert, Button, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
 
 import CustomCheckBox from '../../../components/CustomCheckBox';
 import CustomInput from '../../../components/CustomInput';
+import ModalMessage from '../../../components/ModalMessage';
 import { Text, View } from '../../../components/Themed';
 import { Cities, City } from '../../../constants/Cities';
 import Colors from '../../../constants/Colors';
@@ -27,6 +18,7 @@ const ScreenNewPost = () => {
   const [title, seTitle] = useState('');
   const [selectedCities, setSelectedCities] = useState<City[]>([]);
   const [medias, setMedias] = useState<string[]>([]);
+  const [message, setMessage] = useState('');
 
   const checkCity = (city: City, isChecked: boolean) => {
     if (isChecked) {
@@ -51,7 +43,19 @@ const ScreenNewPost = () => {
     });
   };
 
-  const handlePublish = () => {};
+  const handlePublish = () => {
+    if (!title.trim()) {
+      return setMessage('Digite o título da publicação');
+    }
+
+    if (!selectedCities.length) {
+      return setMessage('Selecione ao menos uma cidade');
+    }
+
+    if (!medias.length) {
+      return setMessage('Inclua pelo menos uma foto ou vídeo');
+    }
+  };
 
   const handleAddMedia = async () => {
     // No permissions request is necessary for launching the image library
@@ -66,12 +70,16 @@ const ScreenNewPost = () => {
     }
   };
 
+  const justifyContent = medias.length >= 2 ? 'space-between' : 'flex-start';
+
   if (!__DEV__) {
     return <Text style={styles.developmentAlert}>Em desenvolvimento !</Text>;
   }
 
   return (
     <SafeAreaView style={styles.page}>
+      <ModalMessage title={message} isOpened={!!message.trim()} closeModal={() => setMessage('')} />
+
       <ScrollView style={[styles.card, { backgroundColor }]}>
         <CustomInput value={title} onChangeText={(text) => seTitle(text)} label='Título' />
 
@@ -81,7 +89,7 @@ const ScreenNewPost = () => {
           ))}
         </View>
 
-        <View style={[styles.medias, { backgroundColor }]}>
+        <View style={[styles.medias, { backgroundColor, justifyContent }]}>
           {medias.map((media) => (
             <Image source={{ uri: media }} style={styles.image} />
           ))}
@@ -125,7 +133,6 @@ const styles = StyleSheet.create({
   medias: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
     gap: 8,
     marginBottom: 16,
   },

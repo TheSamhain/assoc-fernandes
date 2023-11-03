@@ -18,4 +18,8 @@ export default {
     tabIconSelected: tintColorDark,
     cardBackground: '#242526',
   },
+
+  static: {
+    black80: '#0008',
+  },
 };
