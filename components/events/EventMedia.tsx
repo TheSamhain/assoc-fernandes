@@ -1,9 +1,11 @@
+import { ResizeMode, Video } from 'expo-av';
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
-import React from 'react';
+import * as VideoThumbnails from 'expo-video-thumbnails';
+import React, { useMemo } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-import { blurHash } from '../../constants/General';
+import { blurHash, mimeTypes } from '../../constants/General';
 import { Text, View } from '../Themed';
 
 interface EventMediaProps {
@@ -15,6 +17,27 @@ interface EventMediaProps {
 
 const EventMedia: React.FC<EventMediaProps> = ({ galery, media, index, plusItems }) => {
   const router = useRouter();
+
+  const mediaType = useMemo(() => {
+    if (!media) {
+      return 'image/jpeg';
+    }
+
+    const objURL = new URL(media);
+    const urlParts = objURL.pathname.split('/');
+    const lastPart = urlParts.pop() || 'jpg';
+    const extParts = lastPart.split('.');
+    const ext = extParts.pop() || 'jpg';
+    const type = mimeTypes[ext as keyof typeof mimeTypes];
+
+    return type;
+  }, []);
+
+  const _handleVideoRef = (component: Video) => {
+    const playbackObject = component;
+    playbackObject.playFromPositionAsync(2000);
+    playbackObject.pauseAsync();
+  };
 
   return (
     <TouchableOpacity
@@ -32,7 +55,20 @@ const EventMedia: React.FC<EventMediaProps> = ({ galery, media, index, plusItems
             })
       }
     >
-      <Image style={styles.image} source={media} placeholder={blurHash} contentFit='cover' />
+      {mediaType.includes('video') ? (
+        <Video
+          ref={(component) => component && _handleVideoRef(component)}
+          videoStyle={styles.video}
+          style={styles.image}
+          source={{ uri: media }}
+          resizeMode={ResizeMode.CONTAIN}
+          shouldPlay={false}
+          isMuted
+          focusable={false}
+        />
+      ) : (
+        <Image style={styles.image} source={media} placeholder={blurHash} contentFit='cover' />
+      )}
       {index === 3 && plusItems ? (
         <View style={styles.overShadow}>
           <Text style={styles.plusText}>+{plusItems}</Text>
@@ -66,4 +102,6 @@ const styles = StyleSheet.create({
   plusText: {
     fontSize: 50,
   },
+
+  video: {},
 });
