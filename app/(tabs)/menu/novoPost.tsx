@@ -1,6 +1,8 @@
 import { Image } from 'expo-image';
 import * as ImagePicker from 'expo-image-picker';
-import { ref, uploadString } from 'firebase/storage';
+import { useRouter } from 'expo-router';
+import { child, push, ref as refDB, set } from 'firebase/database';
+import { ref as refStorage, uploadString } from 'firebase/storage';
 import React, { useState } from 'react';
 import { Button, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
 
@@ -10,16 +12,18 @@ import ModalMessage from '../../../components/ModalMessage';
 import { Text, View } from '../../../components/Themed';
 import { Cities, City } from '../../../constants/Cities';
 import Colors from '../../../constants/Colors';
-import { KEY_DB } from '../../../constants/Database';
+import { KEY_EVENTOS } from '../../../constants/Database';
 import { mimeTypeToExtension } from '../../../utils/Files';
-import { firebaseStorage } from '../../../utils/firebaseConfig';
+import { getTodayBR } from '../../../utils/Strings';
+import { firebaseDatabase, firebaseStorage } from '../../../utils/firebaseConfig';
 
 const ScreenNewPost = () => {
+  const router = useRouter();
   const theme = useColorScheme() ?? 'light';
   const backgroundColor = Colors[theme].text;
   const color = Colors[theme].background;
 
-  const [title, seTitle] = useState('');
+  const [title, setTitle] = useState('');
   const [selectedCities, setSelectedCities] = useState<City[]>([]);
   const [medias, setMedias] = useState<string[]>([]);
   const [message, setMessage] = useState('');
@@ -60,38 +64,58 @@ const ScreenNewPost = () => {
       return setMessage('Inclua pelo menos uma foto ou vídeo');
     }
 
-    const timeStamp = new Date().getTime();
-    const folderName = KEY_DB + timeStamp + '/';
+    try {
+      const timeStamp = new Date().getTime();
+      const folderName = KEY_EVENTOS + '/' + timeStamp;
+      const folderPath = folderName + '/';
 
-    let index = 1;
+      let index = 1;
 
-    for (const media of medias) {
-      const regExpArr = /data:(.+);base64,/g.exec(media);
+      for (const media of medias) {
+        const regExpArr = /data:(.+);base64,/g.exec(media);
 
-      if (!regExpArr) {
-        continue;
-      }
+        if (!regExpArr) {
+          continue;
+        }
 
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const [_, mimeType] = regExpArr;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const [_, mimeType] = regExpArr;
 
-      if (!mimeType) {
-        continue;
-      }
+        if (!mimeType) {
+          continue;
+        }
 
-      try {
         const extension = mimeTypeToExtension(mimeType);
-        const mediaPath = `${folderName}${index++}.${extension}`;
-        const mediaRef = ref(firebaseStorage, mediaPath);
+        const mediaPath = `${folderPath}${index++}.${extension}`;
+        const mediaRef = refStorage(firebaseStorage, mediaPath);
         const mediaNoMimeType = media.replace(/data:(.+);base64,/g, '');
 
         await uploadString(mediaRef, mediaNoMimeType, 'base64', {
           contentType: mimeType,
         });
-      } catch (error) {
-        const newMessage = error instanceof Error ? error.message : 'Erro ao criar publicação';
-        setMessage(newMessage);
       }
+
+      const dbRef = refDB(firebaseDatabase);
+
+      const eventoId = push(child(dbRef, KEY_EVENTOS)).key;
+
+      await set(refDB(firebaseDatabase, `${KEY_EVENTOS}/${eventoId}`), {
+        data: getTodayBR(),
+        descricao: '',
+        nome: title,
+        local: selectedCities,
+        galeria: folderName,
+      });
+
+      setTitle('');
+      setSelectedCities([]);
+      setMedias([]);
+      setMessage('');
+
+      router.replace('/(tabs)');
+    } catch (error) {
+      const newMessage = error instanceof Error ? error.message : 'Erro ao criar publicação';
+      setMessage(newMessage);
     }
   };
 
@@ -119,7 +143,7 @@ const ScreenNewPost = () => {
       <ModalMessage title={message} isOpened={!!message.trim()} closeModal={() => setMessage('')} />
 
       <ScrollView style={[styles.card, { backgroundColor }]}>
-        <CustomInput value={title} onChangeText={(text) => seTitle(text)} label='Título' />
+        <CustomInput value={title} onChangeText={(text) => setTitle(text)} label='Título' />
 
         <View style={[styles.citiesList, { backgroundColor }]}>
           {Cities.map((label) => (
