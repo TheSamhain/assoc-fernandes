@@ -2,6 +2,8 @@ import Checkbox from 'expo-checkbox';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Colors from '../constants/Colors';
+
 interface CustomCheckBoxProps {
   label: string;
   changeChecked: (value: boolean) => void;
@@ -19,7 +21,7 @@ const CustomCheckBox: React.FC<CustomCheckBoxProps> = ({ label, changeChecked })
           setIsChecked(value);
           changeChecked(value);
         }}
-        color={isChecked ? '#4630EB' : undefined}
+        color={isChecked ? Colors.dark.tint : undefined}
       />
       <Text style={styles.paragraph}>{label}</Text>
     </View>
@@ -38,5 +40,7 @@ const styles = StyleSheet.create({
   },
   checkbox: {
     margin: 8,
+    height: 24,
+    width: 24,
   },
 });

@@ -1,7 +1,6 @@
 import { ResizeMode, Video } from 'expo-av';
 import { Image } from 'expo-image';
 import { useRouter } from 'expo-router';
-import * as VideoThumbnails from 'expo-video-thumbnails';
 import React, { useMemo } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -60,7 +59,7 @@ const EventMedia: React.FC<EventMediaProps> = ({ galery, media, index, plusItems
           ref={(component) => component && _handleVideoRef(component)}
           videoStyle={styles.video}
           style={styles.image}
-          source={{ uri: media }}
+          source={media ? { uri: media } : undefined}
           resizeMode={ResizeMode.CONTAIN}
           shouldPlay={false}
           isMuted

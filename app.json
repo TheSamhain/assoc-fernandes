@@ -42,6 +42,14 @@
       "eas": {
         "projectId": "c2b23f56-26f9-4ebc-9a13-e609f7aec1b9"
       }
-    }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "O app precisa de acesso as suas fotos para publicar eventos"
+        }
+      ]
+    ]
   }
 }
