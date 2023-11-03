@@ -1,7 +1,8 @@
 import { Image } from 'expo-image';
 import * as ImagePicker from 'expo-image-picker';
+import { ref, uploadString } from 'firebase/storage';
 import React, { useState } from 'react';
-import { Alert, Button, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
+import { Button, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
 
 import CustomCheckBox from '../../../components/CustomCheckBox';
 import CustomInput from '../../../components/CustomInput';
@@ -9,6 +10,9 @@ import ModalMessage from '../../../components/ModalMessage';
 import { Text, View } from '../../../components/Themed';
 import { Cities, City } from '../../../constants/Cities';
 import Colors from '../../../constants/Colors';
+import { KEY_DB } from '../../../constants/Database';
+import { mimeTypeToExtension } from '../../../utils/Files';
+import { firebaseStorage } from '../../../utils/firebaseConfig';
 
 const ScreenNewPost = () => {
   const theme = useColorScheme() ?? 'light';
@@ -43,7 +47,7 @@ const ScreenNewPost = () => {
     });
   };
 
-  const handlePublish = () => {
+  const handlePublish = async () => {
     if (!title.trim()) {
       return setMessage('Digite o título da publicação');
     }
@@ -54,6 +58,40 @@ const ScreenNewPost = () => {
 
     if (!medias.length) {
       return setMessage('Inclua pelo menos uma foto ou vídeo');
+    }
+
+    const timeStamp = new Date().getTime();
+    const folderName = KEY_DB + timeStamp + '/';
+
+    let index = 1;
+
+    for (const media of medias) {
+      const regExpArr = /data:(.+);base64,/g.exec(media);
+
+      if (!regExpArr) {
+        continue;
+      }
+
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const [_, mimeType] = regExpArr;
+
+      if (!mimeType) {
+        continue;
+      }
+
+      try {
+        const extension = mimeTypeToExtension(mimeType);
+        const mediaPath = `${folderName}${index++}.${extension}`;
+        const mediaRef = ref(firebaseStorage, mediaPath);
+        const mediaNoMimeType = media.replace(/data:(.+);base64,/g, '');
+
+        await uploadString(mediaRef, mediaNoMimeType, 'base64', {
+          contentType: mimeType,
+        });
+      } catch (error) {
+        const newMessage = error instanceof Error ? error.message : 'Erro ao criar publicação';
+        setMessage(newMessage);
+      }
     }
   };
 
