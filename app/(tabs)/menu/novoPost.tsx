@@ -2,7 +2,7 @@ import { Image } from 'expo-image';
 import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router';
 import { child, push, ref as refDB, set } from 'firebase/database';
-import { ref as refStorage, uploadString } from 'firebase/storage';
+import { ref as refStorage, UploadResult, uploadString } from 'firebase/storage';
 import React, { useState } from 'react';
 import {
   ActivityIndicator,
@@ -82,6 +82,8 @@ const ScreenNewPost = () => {
 
       let index = 1;
 
+      const mediaPromiseList: Promise<UploadResult>[] = [];
+
       for (const media of medias) {
         const regExpArr = /data:(.+);base64,/g.exec(media);
 
@@ -102,13 +104,15 @@ const ScreenNewPost = () => {
         const mediaRef = refStorage(firebaseStorage, mediaPath);
         const mediaNoMimeType = media.replace(/data:(.+);base64,/g, '');
 
-        await uploadString(mediaRef, mediaNoMimeType, 'base64', {
+        const uploadPromise = uploadString(mediaRef, mediaNoMimeType, 'base64', {
           contentType: mimeType,
         });
+
+        mediaPromiseList.push(uploadPromise);
       }
 
+      await Promise.all(mediaPromiseList);
       const dbRef = refDB(firebaseDatabase);
-
       const eventoId = push(child(dbRef, KEY_EVENTOS)).key;
 
       await set(refDB(firebaseDatabase, `${KEY_EVENTOS}/${eventoId}`), {
