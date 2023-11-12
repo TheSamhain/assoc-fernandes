@@ -8,13 +8,14 @@ import { blurHash, mimeTypes } from '../../constants/General';
 import { Text, View } from '../Themed';
 
 interface EventMediaProps {
+  nome: string;
   galery: string;
   media: string | undefined;
   index: number;
   plusItems?: number;
 }
 
-const EventMedia: React.FC<EventMediaProps> = ({ galery, media, index, plusItems }) => {
+const EventMedia: React.FC<EventMediaProps> = ({ nome, galery, media, index, plusItems }) => {
   const router = useRouter();
 
   const mediaType = useMemo(() => {
@@ -50,6 +51,7 @@ const EventMedia: React.FC<EventMediaProps> = ({ galery, media, index, plusItems
                 galery,
                 media: btoa(media || ''),
                 index,
+                nome,
               },
             })
       }
