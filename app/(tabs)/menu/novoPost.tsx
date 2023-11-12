@@ -4,7 +4,15 @@ import { useRouter } from 'expo-router';
 import { child, push, ref as refDB, set } from 'firebase/database';
 import { ref as refStorage, uploadString } from 'firebase/storage';
 import React, { useState } from 'react';
-import { Button, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
+import {
+  ActivityIndicator,
+  Button,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+  useColorScheme,
+} from 'react-native';
 
 import CustomCheckBox from '../../../components/CustomCheckBox';
 import CustomInput from '../../../components/CustomInput';
@@ -14,8 +22,8 @@ import { Cities, City } from '../../../constants/Cities';
 import Colors from '../../../constants/Colors';
 import { KEY_EVENTOS } from '../../../constants/Database';
 import { mimeTypeToExtension } from '../../../utils/Files';
-import { getTodayBR } from '../../../utils/Strings';
 import { firebaseDatabase, firebaseStorage } from '../../../utils/firebaseConfig';
+import { getTodayBR } from '../../../utils/Strings';
 
 const ScreenNewPost = () => {
   const router = useRouter();
@@ -27,6 +35,7 @@ const ScreenNewPost = () => {
   const [selectedCities, setSelectedCities] = useState<City[]>([]);
   const [medias, setMedias] = useState<string[]>([]);
   const [message, setMessage] = useState('');
+  const [isPublishing, setIsPublishing] = useState(false);
 
   const checkCity = (city: City, isChecked: boolean) => {
     if (isChecked) {
@@ -85,8 +94,9 @@ const ScreenNewPost = () => {
           continue;
         }
 
+        const paddedIndex = String(index++).padStart(4, '0');
         const extension = mimeTypeToExtension(mimeType);
-        const mediaPath = `${folderPath}${index++}.${extension}`;
+        const mediaPath = `${folderPath}${paddedIndex}.${extension}`;
         const mediaRef = refStorage(firebaseStorage, mediaPath);
         const mediaNoMimeType = media.replace(/data:(.+);base64,/g, '');
 
@@ -123,8 +133,7 @@ const ScreenNewPost = () => {
     // No permissions request is necessary for launching the image library
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      // quality: 1,
+      allowsMultipleSelection: true,
     });
 
     if (!result.canceled) {
@@ -134,9 +143,9 @@ const ScreenNewPost = () => {
 
   const justifyContent = medias.length >= 2 ? 'space-between' : 'flex-start';
 
-  if (!__DEV__) {
-    return <Text style={styles.developmentAlert}>Em desenvolvimento !</Text>;
-  }
+  // if (!__DEV__) {
+  //   return <Text style={styles.developmentAlert}>Em desenvolvimento !</Text>;
+  // }
 
   return (
     <SafeAreaView style={styles.page}>
@@ -161,7 +170,7 @@ const ScreenNewPost = () => {
           </TouchableOpacity>
         </View>
 
-        <Button onPress={handlePublish} title='Publicar' />
+        {isPublishing ? <ActivityIndicator size='large' /> : <Button onPress={handlePublish} title='Publicar' />}
       </ScrollView>
     </SafeAreaView>
   );
