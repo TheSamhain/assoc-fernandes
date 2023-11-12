@@ -73,6 +73,8 @@ const ScreenNewPost = () => {
       return setMessage('Inclua pelo menos uma foto ou vídeo');
     }
 
+    setIsPublishing(true);
+
     try {
       const timeStamp = new Date().getTime();
       const folderName = KEY_EVENTOS + '/' + timeStamp;
@@ -126,6 +128,8 @@ const ScreenNewPost = () => {
     } catch (error) {
       const newMessage = error instanceof Error ? error.message : 'Erro ao criar publicação';
       setMessage(newMessage);
+    } finally {
+      setIsPublishing(false);
     }
   };
 
