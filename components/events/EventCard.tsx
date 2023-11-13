@@ -2,11 +2,11 @@ import { getDownloadURL, listAll, ref } from 'firebase/storage';
 import React, { useEffect, useState } from 'react';
 import { Dimensions, StyleSheet, useColorScheme, ViewStyle } from 'react-native';
 
+import EventMedia from './EventMedia';
 import Colors from '../../constants/Colors';
 import { EventoProps } from '../../interfaces/EventoProps';
 import { firebaseStorage } from '../../utils/firebaseConfig';
 import { Text, View } from '../Themed';
-import EventMedia from './EventMedia';
 
 const EventCard: React.FC<EventoProps> = ({ galeria, nome, data, descricao }) => {
   const [plusMedias, setPlusMedias] = useState(0);
@@ -57,7 +57,7 @@ const EventCard: React.FC<EventoProps> = ({ galeria, nome, data, descricao }) =>
         {medias.map((media, index) => (
           <EventMedia
             nome={nome}
-            galery={galeria}
+            galeria={galeria}
             plusItems={plusMedias}
             key={galeria + (media || '') + index}
             media={media}
