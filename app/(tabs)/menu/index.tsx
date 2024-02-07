@@ -1,8 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Buffer } from 'buffer';
 import React, { useEffect, useState } from 'react';
-import { Button, StyleSheet, useColorScheme } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { Button, StyleSheet, TextInput, useColorScheme } from 'react-native';
 
 import { SafeAreaView, Text, View } from '../../../components/Themed';
 import MenuItem from '../../../components/menu/MenuItem';

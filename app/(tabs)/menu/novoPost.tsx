@@ -1,8 +1,8 @@
-import { Image } from 'expo-image';
+import { Image, ImageStyle } from 'expo-image';
 import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router';
 import { child, push, ref as refDB, set } from 'firebase/database';
-import { ref as refStorage, UploadResult, uploadString } from 'firebase/storage';
+import { UploadResult, ref as refStorage, uploadString } from 'firebase/storage';
 import React, { useState } from 'react';
 import {
   ActivityIndicator,
@@ -13,6 +13,7 @@ import {
   TouchableOpacity,
   useColorScheme,
 } from 'react-native';
+import { useMediaQuery } from 'react-responsive';
 
 import CustomCheckBox from '../../../components/CustomCheckBox';
 import CustomInput from '../../../components/CustomInput';
@@ -22,8 +23,8 @@ import { Cities, City } from '../../../constants/Cities';
 import Colors from '../../../constants/Colors';
 import { KEY_EVENTOS } from '../../../constants/Database';
 import { mimeTypeToExtension } from '../../../utils/Files';
-import { firebaseDatabase, firebaseStorage } from '../../../utils/firebaseConfig';
 import { getTodayBR } from '../../../utils/Strings';
+import { firebaseDatabase, firebaseStorage } from '../../../utils/firebaseConfig';
 
 const ScreenNewPost = () => {
   const router = useRouter();
@@ -36,6 +37,8 @@ const ScreenNewPost = () => {
   const [medias, setMedias] = useState<string[]>([]);
   const [message, setMessage] = useState('');
   const [isPublishing, setIsPublishing] = useState(false);
+
+  const isMobileDevice = useMediaQuery({ maxDeviceWidth: 1224 });
 
   const checkCity = (city: City, isChecked: boolean) => {
     if (isChecked) {
@@ -151,9 +154,12 @@ const ScreenNewPost = () => {
 
   const justifyContent = medias.length >= 2 ? 'space-between' : 'flex-start';
 
-  // if (!__DEV__) {
-  //   return <Text style={styles.developmentAlert}>Em desenvolvimento !</Text>;
-  // }
+  const mediaStyle: ImageStyle = { ...styles.image };
+
+  if (!isMobileDevice) {
+    mediaStyle.width = 150;
+    mediaStyle.height = 200;
+  }
 
   return (
     <SafeAreaView style={styles.page}>
@@ -170,10 +176,10 @@ const ScreenNewPost = () => {
 
         <View style={[styles.medias, { backgroundColor, justifyContent }]}>
           {medias.map((media) => (
-            <Image source={{ uri: media }} style={styles.image} />
+            <Image source={{ uri: media }} style={mediaStyle} />
           ))}
 
-          <TouchableOpacity onPress={handleAddMedia} style={styles.addItem}>
+          <TouchableOpacity onPress={handleAddMedia} style={[styles.addItem, mediaStyle]}>
             <Text style={[styles.addText, { color }]}>Adicionar Foto / Video</Text>
           </TouchableOpacity>
         </View>
@@ -222,12 +228,9 @@ const styles = StyleSheet.create({
   },
 
   addItem: {
-    borderRadius: 8,
-    height: 150,
     backgroundColor: Colors.light.tabIconDefault,
     justifyContent: 'center',
     alignItems: 'center',
-    width: '30%',
   },
   addText: {
     textAlign: 'center',

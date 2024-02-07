@@ -8,14 +8,10 @@ import Colors from '../../constants/Colors';
 import { blurHash, mimeTypes } from '../../constants/General';
 
 interface EventMediaListProps {
-  nome: string;
-  galeria: string;
   media: string | undefined;
-  index: number;
-  plusItems?: number;
 }
 
-const EventMediaList: React.FC<EventMediaListProps> = ({ nome, galeria, media, index, plusItems }) => {
+const EventMediaList: React.FC<EventMediaListProps> = ({ media }) => {
   const mediaType = useMemo(() => {
     if (!media) {
       return 'image/jpeg';
