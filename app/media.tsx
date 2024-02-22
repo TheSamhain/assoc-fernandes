@@ -68,6 +68,7 @@ const ScreenMedia = () => {
       ? router.push({
           pathname: 'media',
           params: {
+            nome,
             galery,
             media: btoa(nextMedia || ''),
             index: numIndex + 1,
@@ -80,6 +81,7 @@ const ScreenMedia = () => {
       ? router.push({
           pathname: 'media',
           params: {
+            nome,
             galery,
             media: btoa(previousMedia || ''),
             index: numIndex - 1,

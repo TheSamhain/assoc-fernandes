@@ -1,6 +1,7 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { ResizeMode, Video } from 'expo-av';
 import { Image } from 'expo-image';
+import { Link } from 'expo-router';
 import React, { useMemo } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -8,10 +9,13 @@ import Colors from '../../constants/Colors';
 import { blurHash, mimeTypes } from '../../constants/General';
 
 interface EventMediaListProps {
+  nome: string;
   media: string | undefined;
+  galery: string;
+  index: number;
 }
 
-const EventMediaList: React.FC<EventMediaListProps> = ({ media }) => {
+const EventMediaList: React.FC<EventMediaListProps> = ({ nome, media, galery, index }) => {
   const mediaType = useMemo(() => {
     if (!media) {
       return 'image/jpeg';
@@ -34,35 +38,48 @@ const EventMediaList: React.FC<EventMediaListProps> = ({ media }) => {
   };
 
   return (
-    <TouchableOpacity style={styles.media} onPress={() => console.log('Media clicada')}>
-      {mediaType.includes('video') ? (
-        <>
-          <Video
-            ref={(component) => component && _handleVideoRef(component)}
+    <Link
+      asChild
+      href={{
+        pathname: `media`,
+        params: {
+          nome,
+          galery,
+          media: btoa(media || ''),
+          index,
+        },
+      }}
+    >
+      <TouchableOpacity style={styles.media}>
+        {mediaType.includes('video') ? (
+          <>
+            <Video
+              ref={(component) => component && _handleVideoRef(component)}
+              style={styles.image}
+              source={media ? { uri: media } : undefined}
+              resizeMode={ResizeMode.CONTAIN}
+              shouldPlay={false}
+              isMuted
+              focusable={false}
+            />
+            <MaterialCommunityIcons
+              name='play-circle-outline'
+              color={Colors.light.background}
+              size={64}
+              style={styles.videoPlayIcon}
+            />
+          </>
+        ) : (
+          <Image
+            cachePolicy='memory-disk'
             style={styles.image}
-            source={media ? { uri: media } : undefined}
-            resizeMode={ResizeMode.CONTAIN}
-            shouldPlay={false}
-            isMuted
-            focusable={false}
+            source={media}
+            placeholder={blurHash}
+            contentFit='cover'
           />
-          <MaterialCommunityIcons
-            name='play-circle-outline'
-            color={Colors.light.background}
-            size={64}
-            style={styles.videoPlayIcon}
-          />
-        </>
-      ) : (
-        <Image
-          cachePolicy='memory-disk'
-          style={styles.image}
-          source={media}
-          placeholder={blurHash}
-          contentFit='cover'
-        />
-      )}
-    </TouchableOpacity>
+        )}
+      </TouchableOpacity>
+    </Link>
   );
 };
 

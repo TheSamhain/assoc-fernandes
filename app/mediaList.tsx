@@ -1,9 +1,8 @@
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import { getDownloadURL, listAll, ref } from 'firebase/storage';
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, StyleSheet, Text, useColorScheme, View } from 'react-native';
+import { ActivityIndicator, FlatList, StyleSheet, View, useColorScheme } from 'react-native';
 
-import EventMedia from '../components/events/EventMedia';
 import EventMediaList from '../components/events/EventMediaList';
 import Colors from '../constants/Colors';
 import { firebaseStorage } from '../utils/firebaseConfig';
@@ -53,8 +52,8 @@ const ScreenMediaList = () => {
         data={medias}
         renderItem={({ item, index }) => (
           <EventMediaList
-            nome={nome || 'Medias'}
-            galeria={galeria || ''}
+            nome={nome || 'Media'}
+            galery={galeria || ''}
             key={galeria + (item || '') + index}
             media={item}
             index={index}
