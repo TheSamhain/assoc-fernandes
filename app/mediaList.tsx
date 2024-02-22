@@ -27,14 +27,10 @@ const ScreenMediaList = () => {
       const listRef = await listAll(imagesRef);
       const { items } = listRef;
 
-      const newMedias: string[] = [];
-
       for (const item of items) {
         const url = await getDownloadURL(item);
-        newMedias.push(url);
+        setMedias((old) => [...old, url]);
       }
-
-      setMedias(newMedias);
     };
 
     getMedias();
