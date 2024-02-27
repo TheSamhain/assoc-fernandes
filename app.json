@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#121212"
+      "backgroundColor": "#FFFFFF"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -19,7 +19,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#121212"
+        "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
@@ -27,7 +27,7 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png",
 
-      "backgroundColor": "#121212",
+      "backgroundColor": "#FFFFFF",
       "barStyle": "default",
       "name": "Associação Fernandes de Karatê-do",
       "shortName": "Assoc. Fernandes Karatê",
@@ -36,7 +36,7 @@
       "lang": "pt-BR",
       "orientation": "portrait",
       "scope": "https://afkarate.web.app/",
-      "themeColor": "#121212"
+      "themeColor": "#FFFFFF"
     },
     "extra": {
       "eas": {
