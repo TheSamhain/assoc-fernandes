@@ -38,14 +38,14 @@ export default function TabLayout() {
         }}
       />
 
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name='exameFaixa'
         options={{
           title: 'Exame faixa',
           tabBarIcon: ({ color }) => <TabBarIcon name='chevron-triple-up' color={color} />,
           headerShown: false,
         }}
-      />
+      /> */}
 
       <Tabs.Screen
         name='menu'
